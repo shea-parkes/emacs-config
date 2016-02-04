@@ -55,3 +55,8 @@
 ;; Needs to be told to do live diffs
 (custom-set-variables
  '(git-gutter:update-interval 2))
+
+
+;; M-x package-install RET markdown-mode RET
+;; TODO: Configure pandoc for live preview mode via `markdown-command`
+(require 'markdown-mode)
