@@ -24,12 +24,10 @@ For now, I'll leave commented-out `package-install` calls littered in `.emacs`. 
 
 #### Assisting Python environment
 
-This configuration depends upon having a helpful python environment at the front of your `%PATH%` when launching emacs.  This environment should contain any code introspection tools used in packages below (e.g. `pylint` and `jedi`).  `jedi` in particular would likely benefit from this python environment being very similar to the environment you would actually execute code in (i.e. contain packages such as `sqlalchemy` if you're going to use them in your code).
+This configuration depends upon having a helpful python environment at the front of your `%PATH%` when launching emacs.  This environment should contain any code introspection tools used in packages below (e.g. `pylint` and `jedi`).  `jedi` in particular would likely benefit from this python environment being very similar to the environment you would actually execute code in (i.e. contain packages such as `sqlalchemy` if you're going to use them in your code).  `emacs-jedi` would also likely want the `epc` package installed in this environment.
 
 Be sure to also include the `/Scripts` folder of the environment in your `%PATH%` (most tools like `conda` would already do this).
 
 ### Package-specific setup steps
 
-#### `flycheck`
-
-`flycheck` just needs for `pylint` to be available in your `%PATH%`.  `flycheck` also automatically lints `elisp` for free.
+Most package specific notes are directly in the `.emacs` file to keep the configuration and documentation cognitively close together.
