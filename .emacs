@@ -36,12 +36,12 @@
 ;; M-x package-install RET jedi RET
 ;; Jedi drags along the maligned `auto-complete` package
 ;;   Could install an additional package to integrate with `company`, but didn't seem to be worth it
-;; Jedi depends upon a mess of additional configuration
-;; In particular, when `jedi:setup` is called, it must execute the embedded `jediepcserver.py`
+;; When `jedi:setup` is called, it must execute the bundled `jediepcserver.py`
 ;;   in a python environment that has `jedi` and `epc` python packages.
 ;; Jedi offers to setup such an environment, but that then depends upon `virtualenv` as opposed to `conda`.
-;; To bypass these hooks,
+;; To bypass this mess, manually point `jedi:server-command` to a fresh copy of jediepcserver.py
 (require 'jedi)
+(setq jedi:server-command '("python" "c:/users/USERNAME/.emacs.d/jediepcserver.py"))
 (add-hook 'python-mode-hook 'jedi:setup)
 (setq jedi:complete-on-dot t)
 
