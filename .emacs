@@ -60,3 +60,8 @@
 ;; M-x package-install RET markdown-mode RET
 ;; TODO: Configure pandoc for live preview mode via `markdown-command`
 (require 'markdown-mode)
+
+;; M-x package-install RET rainbow-delimiters RET
+(require 'rainbow-delimiters)
+;; Enable for most programming modes
+(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
