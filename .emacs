@@ -39,9 +39,9 @@
 ;; When `jedi:setup` is called, it must execute the bundled `jediepcserver.py`
 ;;   in a python environment that has `jedi` and `epc` python packages.
 ;; Jedi offers to setup such an environment, but that then depends upon `virtualenv` as opposed to `conda`.
-;; To bypass this mess, manually point `jedi:server-command` to a fresh copy of jediepcserver.py
+;; To bypass this mess, ensure the first `python` on %PATH% can import `jedi` and `epc`.
+;;  Alternatively, adjust jedi:server-command to target a python that does.
 (require 'jedi)
-(setq jedi:server-command '("python" "c:/users/USERNAME/.emacs.d/jediepcserver.py"))
 (add-hook 'python-mode-hook 'jedi:setup)
 (setq jedi:complete-on-dot t)
 
