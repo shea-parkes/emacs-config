@@ -72,3 +72,9 @@
 (require 'rainbow-delimiters)
 ;; Enable for most programming modes
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+
+
+;; M-x package-install RET multiple-cursors RET
+(require 'multiple-cursors)
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
