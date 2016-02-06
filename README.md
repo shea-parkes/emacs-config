@@ -44,12 +44,21 @@ I'm mostly typing these out as a memory exercise.  I'll lead with the handful of
 | :------- | :---- | :---------- |
 | `C->`/`C-<` | `multiple-cursors` | Add another cursor at the next/previous: {matching region if a selection is active; row if a selection is not active} |
 | `<C-tab>` | `jedi-mode` | Force auto-completion to trigger. (Does a pretty good job on its own, this is just the hammer.) |
+| `C-c .`/`C-c ,` | `jedi` | Go-to (come back from) definition of current name. |
+| `M-x RET git-gutter RET` | `git-gutter` | Force refresh of git-gutter markings. (Not actually a shortcut, but has worked well enough not to bind it.) |
 | `M-n`/`M-p` | `contextual` | Very dynamic shortcuts.  Cycles `M-x` history, `jedi` completion options and many more. |
 | `C-j` | `ido-mode` | Force evaluation of current text literal (i.e. do not use the first completion suggestion).  Useful to enter `dired` mode. |
+| `C-M-x` | `prog-mode` | Execute the current `defun` |
+| `C-c C-z` | `python-mode` | Switch to Python interpreter (prompt to launch if needed). |
+| `C-c C-r` | `python-mode` | Send region to Python interpreter. |
+| `C-c C-c` | `python-mode` | Send buffer to Python interpreter (automatically excludes `if __name__ == '__main__':` sections. |
+| `C-M-h` | `python-mode` | Select the `defun` |
+| `C-M-a`/`C-M-e` | `python-mode` | Move to the beginning/end of the `defun` |
 | `C-y` | *kill/yank* | "Paste" from the kill ring (i.e. "clipboard"). |
 | `M-y` | *kill/yank* | Only effective immediately after `C-y`.  Cycles through the kill ring (i.e. "clipboard") |
 | `C-w`/`M-w` | *kill/yank* | "Cut" or "Copy" the selected region. |
 | `C-k` | *kill/yank* | Kill to the end of the line. |
+| `M-f`/`M-b`/`M-k` | *kill/yank* | Move/kill by word. |
 | `C-x 1` | *windows* | Destroy all windows but the current one. |
 | `C-x 0` | *windows* | Destroy the current window. |
 | `C-x 3` | *windows* | Split the current window down the middle. |
