@@ -15,6 +15,9 @@
 (setq ido-enable-flex-matching t)
 (ido-mode t)
 
+;; Activate visible whitespace for code files
+(add-hook 'prog-mode-hook #'whitespace-mode)
+
 ;; Setup where to pull third party packages from
 (require 'package)
 (add-to-list 'package-archives
