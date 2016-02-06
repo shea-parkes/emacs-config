@@ -20,8 +20,12 @@
 
 ;; Activate visible whitespace for code files
 (add-hook 'prog-mode-hook #'whitespace-mode)
+;; Be refined in what we flag.  Just the bad stuff and then tabs/spaces via marks
+(setq whitespace-style (quote
+   (face trailing lines space-mark tab-mark)))
 ;; Kill trailing whitespace on save
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+;; Adjust when to flag a line as too-long via font
 (setq whitespace-line-column 100)
 
 ;; Setup where to pull third party packages from
