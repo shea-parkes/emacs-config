@@ -49,6 +49,7 @@
 (require 'jedi)
 (add-hook 'python-mode-hook 'jedi:setup)
 (setq jedi:complete-on-dot t)
+(define-key jedi-mode-map (kbd "<C-tab>") 'jedi:complete)
 
 
 ;; M-x package-install RET git-gutter RET
