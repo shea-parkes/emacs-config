@@ -24,10 +24,36 @@ For now, I'll leave commented-out `package-install` calls littered in `.emacs`. 
 
 #### Assisting Python environment
 
-This configuration depends upon having a helpful python environment at the front of your `%PATH%` when launching emacs.  This environment should contain any code introspection tools used in packages below (e.g. `pylint` and `jedi`).  `jedi` in particular would likely benefit from this python environment being very similar to the environment you would actually execute code in (i.e. contain packages such as `sqlalchemy` if you're going to use them in your code).  `emacs-jedi` would also likely want the `epc` package installed in this environment.
+This configuration depends upon having a helpful python environment at the front of your `%PATH%` when launching emacs.  This environment should contain any code introspection tools used in packages below (e.g. `pylint` and `jedi`).  `jedi` in particular would likely benefit from this python environment being very similar to the environment you would actually execute code in (i.e. contain packages such as `sqlalchemy` if you're going to use them in your code).  `emacs-jedi` also wants the `epc` package installed in this environment.
 
 Be sure to also include the `/Scripts` folder of the environment in your `%PATH%` (most tools like `conda` would already do this).
 
 ### Package-specific setup steps
 
 Most package specific notes are directly in the `.emacs` file to keep the configuration and documentation cognitively close together.
+
+### Fringe vs Margin
+
+Emacs has two "gutter" areas. The `fringe` is the inner one and the `margin` is the outer one.  Various packages/modes try to take advantage of these areas, but in general only one can use a given area at once.  I try to note which package/mode is using which area in notes in the config file.
+
+### Keyboard Shortcuts
+
+I'm mostly typing these out as a memory exercise.  I'll lead with the handful of custom ones and then only toss on the standard ones I want to remind myself of.
+
+| Shortcut | ~Mode | Description |
+| :------- | :---- | :---------- |
+| `C->`/`C-<` | `multiple-cursors` | Add another cursor at the next/previous: {matching region if a selection is active; row if a selection is not active} |
+| `<C-tab>` | `jedi-mode` | Force auto-completion to trigger. (Does a pretty good job on its own, this is just the hammer.) |
+| `M-n`/`M-p` | `contextual` | Very dynamic shortcuts.  Cycles `M-x` history, `jedi` completion options and many more. |
+| `C-j` | `ido-mode` | Force evaluation of current text literal (i.e. do not use the first completion suggestion).  Useful to enter `dired` mode. |
+| `C-y` | *kill/yank* | "Paste" from the kill ring (i.e. "clipboard"). |
+| `M-y` | *kill/yank* | Only effective immediately after `C-y`.  Cycles through the kill ring (i.e. "clipboard") |
+| `C-w`/`M-w` | *kill/yank* | "Cut" or "Copy" the selected region. |
+| `C-k` | *kill/yank* | Kill to the end of the line. |
+| `C-x 1` | *windows* | Destroy all windows but the current one. |
+| `C-x 0` | *windows* | Destroy the current window. |
+| `C-x 3` | *windows* | Split the current window down the middle. |
+| `C-x o` | *windows* | Switch the active cursor to the next window. |
+| `C-x k` | *buffers* | Kill a buffer. |
+| `C-x b` | *buffers* | Switch buffers. |
+| `C-x C-b` | *buffers* | Open up buffer of buffers. |
