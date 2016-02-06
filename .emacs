@@ -58,8 +58,9 @@
 
 
 ;; M-x package-install RET markdown-mode RET
-;; TODO: Configure pandoc for live preview mode via `markdown-command`
 (require 'markdown-mode)
+(setq markdown-command "pandoc")
+
 
 ;; M-x package-install RET rainbow-delimiters RET
 (require 'rainbow-delimiters)
