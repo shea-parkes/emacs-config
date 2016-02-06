@@ -38,6 +38,29 @@
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
 
+;; M-x package-install RET git-gutter RET
+;; Git-gutter uses the margin by default
+;; Needs `git` and `diff` on your %PATH%
+;;   `diff` is often provided in the `/usr/bin` folder of a git-for-windows MinGW system
+(require 'git-gutter)
+(global-git-gutter-mode +1)
+;; Needs to be told to do live diffs
+(custom-set-variables
+ '(git-gutter:update-interval 2))
+
+
+;; M-x package-install RET multiple-cursors RET
+(require 'multiple-cursors)
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+
+
+;; M-x package-install RET rainbow-delimiters RET
+(require 'rainbow-delimiters)
+;; Enable for most programming modes
+(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+
+
 ;; M-x package-install RET jedi RET
 ;; Jedi drags along the maligned `auto-complete` package
 ;;   Could install an additional package to integrate with `company`, but didn't seem to be worth it
@@ -52,29 +75,6 @@
 (define-key jedi-mode-map (kbd "<C-tab>") 'jedi:complete)
 
 
-;; M-x package-install RET git-gutter RET
-;; Git-gutter uses the margin by default
-;; Needs `git` and `diff` on your %PATH%
-;;   `diff` is often provided in the `/usr/bin` folder of a git-for-windows MinGW system
-(require 'git-gutter)
-(global-git-gutter-mode +1)
-;; Needs to be told to do live diffs
-(custom-set-variables
- '(git-gutter:update-interval 2))
-
-
 ;; M-x package-install RET markdown-mode RET
 (require 'markdown-mode)
 (setq markdown-command "pandoc")
-
-
-;; M-x package-install RET rainbow-delimiters RET
-(require 'rainbow-delimiters)
-;; Enable for most programming modes
-(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
-
-
-;; M-x package-install RET multiple-cursors RET
-(require 'multiple-cursors)
-(global-set-key (kbd "C->") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
