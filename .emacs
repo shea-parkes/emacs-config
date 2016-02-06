@@ -78,3 +78,7 @@
 ;; M-x package-install RET markdown-mode RET
 (require 'markdown-mode)
 (setq markdown-command "pandoc")
+
+
+;; M-x package-install RET ess RET
+(require 'ess-site)
