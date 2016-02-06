@@ -9,6 +9,9 @@
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 
+;; Use a more sane cursor type
+(setq-default cursor-type 'bar)
+
 ;; Activate the bundled `ido` mode
 ;;   Haven't gone to the external `flx-ido` implementation yet
 (require 'ido)
