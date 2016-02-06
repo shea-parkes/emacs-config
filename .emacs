@@ -19,6 +19,7 @@
 (add-hook 'prog-mode-hook #'whitespace-mode)
 ;; Kill trailing whitespace on save
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+(setq whitespace-line-column 100)
 
 ;; Setup where to pull third party packages from
 (require 'package)
