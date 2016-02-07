@@ -54,15 +54,18 @@ I'm mostly typing these out as a memory exercise.  I'll lead with the handful of
 | `C-c C-c` | `python-mode` | Send buffer to Python interpreter (automatically excludes `if __name__ == '__main__':` sections. |
 | `C-M-h` | `python-mode` | Select the `defun` |
 | `C-M-a`/`C-M-e` | `python-mode` | Move to the beginning/end of the `defun` |
-| `C-y` | *kill/yank* | "Paste" from the kill ring (i.e. "clipboard"). |
-| `M-y` | *kill/yank* | Only effective immediately after `C-y`.  Cycles through the kill ring (i.e. "clipboard") |
+| `C-y` / `M-y` | *kill/yank* | "Paste" from the kill ring (i.e. "clipboard"); then cycle through the kill ring with subsequent calls to `M-y`. |
 | `C-w`/`M-w` | *kill/yank* | "Cut" or "Copy" the selected region. |
 | `C-k` | *kill/yank* | Kill to the end of the line. |
 | `M-f`/`M-b`/`M-k` | *kill/yank* | Move/kill by word. |
-| `C-x 1` | *windows* | Destroy all windows but the current one. |
+| `M-%` | *replace* | Go into a find/replace dialogue.  Can then do `y`/`n`/`!` to replace one/skip one/replace all.  Other keys available. |
+| `M-l` / `M-u` | *case conversion* | Convert the next word to lower-/upper- case. |
+| `C-x C-l` / `C-x C-u` | *case conversion* | Convert the region to lower-/upper- case. |
+| `C-X 1` | *windows* | Destroy all windows but the current one. |
 | `C-x 0` | *windows* | Destroy the current window. |
 | `C-x 3` | *windows* | Split the current window down the middle. |
 | `C-x o` | *windows* | Switch the active cursor to the next window. |
+| `C-M-v` | *windows* | Scroll the other window. |
 | `C-x k` | *buffers* | Kill a buffer. |
 | `C-x b` | *buffers* | Switch buffers. |
-| `C-x C-b` | *buffers* | Open up buffer of buffers. |
+| `C-x C-b` | *buffers* | open up buffer of buffers. |
