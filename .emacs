@@ -12,6 +12,9 @@
 ;; Use a more sane cursor type
 (setq-default cursor-type 'bar)
 
+;; React normally when typing with a region active
+(delete-selection-mode 1)
+
 ;; Activate the bundled `ido` mode
 ;;   Haven't gone to the external `flx-ido` implementation yet
 (require 'ido)
