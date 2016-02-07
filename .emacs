@@ -15,6 +15,9 @@
 ;; React normally when typing with a region active
 (delete-selection-mode 1)
 
+;; Place a nice code-navigation menu under a right-click menu
+(global-set-key [mouse-3] 'imenu)
+
 ;; Activate the bundled `ido` mode
 ;;   Haven't gone to the external `flx-ido` implementation yet
 (require 'ido)
