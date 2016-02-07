@@ -48,16 +48,28 @@
 (require 'flycheck)
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
+;; Eventually went with diff-hl over git-gutter
+;; diff-hl seemed to be more consistent at catching changes etc
 
 ;; M-x package-install RET git-gutter RET
 ;; Git-gutter uses the margin by default
 ;; Needs `git` and `diff` on your %PATH%
 ;;   `diff` is often provided in the `/usr/bin` folder of a git-for-windows MinGW system
-(require 'git-gutter)
-(global-git-gutter-mode +1)
-;; Needs to be told to do live diffs
-(custom-set-variables
- '(git-gutter:update-interval 2))
+;; (require 'git-gutter)
+;; (global-git-gutter-mode +1)
+;; ;; Needs to be told to do live diffs
+;; (custom-set-variables
+;;  '(git-gutter:update-interval 2))
+
+
+;; M-x package-install RET diff-hl RET
+(require 'diff-hl)
+;; TODO: Confirm if diff-hl needs `diff` in the %PATH%
+(global-diff-hl-mode)
+;; diff-hl uses the fring by default, but conflicts with flycheck
+(diff-hl-margin-mode)
+;; Enable on-the-fly indicators
+(diff-hl-flydiff-mode)
 
 
 ;; M-x package-install RET multiple-cursors RET
