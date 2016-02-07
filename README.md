@@ -59,7 +59,7 @@ I'm mostly typing these out as a memory exercise.  I'll lead with the handful of
 | `C-k` | *kill/yank* | Kill to the end of the line. |
 | `M-f`/`M-b`/`M-k` | *kill/yank* | Move/kill by word. |
 | `M-%` | *replace* | Go into a find/replace dialogue.  Can then do `y`/`n`/`!` to replace one/skip one/replace all.  Other keys available. |
-| `M-l` / `M-u` | *case conversion* | Convert the next word to lower-/upper- case. |
+| `M-l` / `M-u` / `M-c` | *case conversion* | Convert the next word to lower-/upper-/proper- case. |
 | `C-x C-l` / `C-x C-u` | *case conversion* | Convert the region to lower-/upper- case. |
 | `C-x 1` | *windows* | Destroy all windows but the current one. |
 | `C-x 4 0` | *windows* | Destroys the current window and kills the associated buffer. |
@@ -71,8 +71,9 @@ I'm mostly typing these out as a memory exercise.  I'll lead with the handful of
 | `C-x 3` | *windows* | Split the current window down the middle. |
 | `C-M-v` | *windows* | Scroll the other window. |
 | `C-x k` | *buffers* | Kill a buffer. |
-| `C-x C-v` | *buffers* | Kills the current buffer **and** visits a new file.
+| `C-x C-v` | *buffers* | Kills the current buffer **and** visits a new file. |
 | `C-x b` | *buffers* | Switch buffers (by name or just last). |
 | `C-x LEFT` / `C-x RIGHT` | *buffers* | Cycle the buffer shown in the current window. |
 | `M-x revert-buffer` | *buffers* | Reloads the associated file from disk. |
-| `C-x C-b` | *buffers* | open up buffer of buffers. |
+| `C-x C-b` | *buffers* | Open up buffer of buffers. |
+| `s` / `d` / `x` | *buffers-list* | Mark a buffer for later saving/deleting. Then execute out marks. |
