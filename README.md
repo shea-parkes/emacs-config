@@ -43,9 +43,10 @@ I'm mostly typing these out as a memory exercise.  I'll lead with the handful of
 | Shortcut | ~Mode | Description |
 | :------- | :---- | :---------- |
 | `C->`/`C-<` | `multiple-cursors` | Add another cursor at the next/previous: {matching region if a selection is active; row if a selection is not active} |
+| `mouse-3` | `imenu` | Give a nice in-place code-navigation menu. |
 | `<C-tab>` | `jedi-mode` | Force auto-completion to trigger. (Does a pretty good job on its own, this is just the hammer.) |
 | `C-c .`/`C-c ,` | `jedi` | Go-to (come back from) definition of current name. |
-| `M-x RET git-gutter RET` | `git-gutter` | Force refresh of git-gutter markings. (Not actually a shortcut, but has worked well enough not to bind it.) |
+| `C-c g` | `git-gutter` | Force refresh of git-gutter markings (will currently get confused in non-saved state.) |
 | `M-n`/`M-p` | `contextual` | Very dynamic shortcuts.  Cycles `M-x` history, `jedi` completion options and many more. |
 | `C-j` | `ido-mode` | Force evaluation of current text literal (i.e. do not use the first completion suggestion).  Useful to enter `dired` mode. |
 | `C-M-x` | `prog-mode` | Execute the current `defun` |
