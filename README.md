@@ -67,8 +67,8 @@ I'm mostly typing these out as a memory exercise.  I'll lead with the handful of
 | `C-x 4 0` | *windows* | Destroys the current window and kills the associated buffer. |
 | `C-x 0` | *windows* | Destroy the current window. |
 | `C-x o` | *windows* | Switch the active cursor to the next window. |
-| `C-x 4 f` | *windows* | Opens a file in a new window. |
-| `C-x 4 b` | *windows* | Opens a buffer in a new window. |
+| `C-x 4 f` | *windows* | Opens a file in other window. |
+| `C-x 4 b` | *windows* | Opens a buffer in other window. |
 | `C-x 4 d` | *windows* | Run `Dired` in other window. |
 | `C-x 3` | *windows* | Split the current window down the middle. |
 | `C-M-v` | *windows* | Scroll the other window. |
