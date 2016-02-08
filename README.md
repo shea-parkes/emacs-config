@@ -56,6 +56,7 @@ I'm mostly typing these out as a memory exercise.  I'll lead with the handful of
 | `C-M-h` | `python-mode` | Select the `defun` |
 | `C-M-a`/`C-M-e` | `python-mode` | Move to the beginning/end of the `defun` |
 | `C-M-h`/`C-M-k` | `prog-mode` | Select / kill the current `defun`. |
+| `C-M-i` | `prog-mode` | Generic "completion" shortcut.  Doesn't do that much really.  Jedi has custom shortcut above. |
 | `C-y` / `M-y` | *kill/yank* | "Paste" from the kill ring (i.e. "clipboard"); then cycle through the kill ring with subsequent calls to `M-y`. |
 | `C-w`/`M-w` | *kill/yank* | "Cut" or "Copy" the selected region. |
 | `C-k` | *kill/yank* | Kill to the end of the line. |
