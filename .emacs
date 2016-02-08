@@ -21,6 +21,9 @@
 ;; Consider dashes and underscores part of a word in prog-mode
 (add-hook 'prog-mode-hook #'superword-mode)
 
+;; Insert matching parens like a real editor
+(add-hook 'prog-mode-hook #'electric-pair-mode)
+
 ;; Activate the bundled `ido` mode
 ;;   Haven't gone to the external `flx-ido` implementation yet
 (require 'ido)
