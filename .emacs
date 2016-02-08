@@ -18,6 +18,9 @@
 ;; Place a nice code-navigation menu under a right-click menu
 (global-set-key [mouse-3] 'imenu)
 
+;; Consider dashes and underscores part of a word in prog-mode
+(add-hook 'prog-mode-hook #'superword-mode)
+
 ;; Activate the bundled `ido` mode
 ;;   Haven't gone to the external `flx-ido` implementation yet
 (require 'ido)
