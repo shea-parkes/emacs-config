@@ -23,6 +23,8 @@
 
 ;; Insert matching parens like a real editor
 (add-hook 'prog-mode-hook #'electric-pair-mode)
+;; And highlight the matching parens
+(add-hook 'prog-mode-hook #'show-paren-mode)
 
 ;; Activate the bundled `ido` mode
 ;;   Haven't gone to the external `flx-ido` implementation yet
