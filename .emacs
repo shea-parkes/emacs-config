@@ -89,7 +89,9 @@
 (global-set-key (kbd "C-x g") 'magit-status)
 ;; Likely need to turn on credential management with:
 ;;   git config --global credential.helper wincred
-
+;; Integrate git-gutter into magit
+(add-hook 'git-gutter:update-hooks 'magit-after-revert-hook)
+(add-hook 'git-gutter:update-hooks 'magit-not-reverted-hook)
 
 ;; M-x package-install RET multiple-cursors RET
 (require 'multiple-cursors)
