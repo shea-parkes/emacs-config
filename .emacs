@@ -87,6 +87,8 @@
 ;; M-x package-install RET magit RET
 (require 'magit)
 (global-set-key (kbd "C-x g") 'magit-status)
+;; Likely need to turn on credential management with:
+;;   git config --global credential.helper wincred
 
 
 ;; M-x package-install RET multiple-cursors RET
