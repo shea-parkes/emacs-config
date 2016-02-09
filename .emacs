@@ -84,6 +84,11 @@
 ;; (diff-hl-flydiff-mode)
 
 
+;; M-x package-install RET magit RET
+(require 'magit)
+(global-set-key (kbd "C-x g") 'magit-status)
+
+
 ;; M-x package-install RET multiple-cursors RET
 (require 'multiple-cursors)
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
