@@ -38,6 +38,8 @@
 (add-hook 'prog-mode-hook #'electric-pair-mode)
 ;; And highlight the matching parens
 (add-hook 'prog-mode-hook #'show-paren-mode)
+;; Actually, highlight the whole expression
+(setq show-paren-style 'expression)
 
 ;; Activate the bundled `ido` mode
 ;;   Haven't gone to the external `flx-ido` implementation yet
