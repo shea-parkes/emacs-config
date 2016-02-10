@@ -5,6 +5,9 @@
 ;;;      One with introspection tools such as `pylint` and `jedi`.
 ;;; Code:
 
+;; Raise GC thresholds to modern levels (to ~32MB from ~1MB)
+(setq gc-cons-threshold 42000000)
+
 ;; Remove tempations to utilize the GUI
 (menu-bar-mode -1)
 (tool-bar-mode -1)
