@@ -61,7 +61,7 @@ I'm mostly typing these out as a memory exercise.  I'll lead with the handful of
 | `C-y` / `M-y` | *kill/yank* | "Paste" from the kill ring (i.e. "clipboard"); then cycle through the kill ring with subsequent calls to `M-y`. |
 | `C-w`/`M-w` | *kill/yank* | "Cut" or "Copy" the selected region. |
 | `C-k` | *kill/yank* | Kill to the end of the line. |
-| `M-f`/`M-b`/`M-k` | *kill/yank* | Move/kill by word. |
+| `M-f`/`M-b`/`M-k`/`M-DEL` | *kill/yank* | Move/kill by word. |
 | `M-%` | *replace* | Go into a find/replace dialogue.  Can then do `y`/`n`/`!` to replace one/skip one/replace all.  Other keys available. |
 | `M-l` / `M-u` / `M-c` | *case conversion* | Convert the next word to lower-/upper-/proper- case. |
 | `C-x C-l` / `C-x C-u` | *case conversion* | Convert the region to lower-/upper- case. |
