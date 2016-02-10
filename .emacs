@@ -104,6 +104,8 @@
 (global-magit-file-mode t)
 ;; Likely need to turn on credential management with:
 ;;   git config --global credential.helper wincred
+;; Also swap it so the password prompt is a popup when it's needed
+(setenv "GIT_ASKPASS" "git-gui--askpass")
 ;; Integrate git-gutter into magit (Not confirmed working)
 (add-hook 'git-gutter:update-hooks 'magit-after-revert-hook)
 (add-hook 'git-gutter:update-hooks 'magit-not-reverted-hook)
