@@ -5,6 +5,9 @@
 ;;;      One with introspection tools such as `pylint` and `jedi`.
 ;;; Code:
 
+;; Start the initial frame maximized
+(add-to-list 'initial-frame-alist '(fullscreen . maximized))
+
 ;; Raise GC thresholds to modern levels (to ~32MB from ~1MB)
 (setq gc-cons-threshold 42000000)
 
