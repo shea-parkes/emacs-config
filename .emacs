@@ -95,10 +95,12 @@
 
 ;; M-x package-install RET magit RET
 (require 'magit)
-(global-set-key (kbd "C-x g") 'magit-status)
+;; Try and let magit handle setting up minor modes and shortcuts for git-backed files
+;;   I'm not convinced this gets auto-revert correct, but I do think it's the way of the future
+(global-magit-file-mode t)
 ;; Likely need to turn on credential management with:
 ;;   git config --global credential.helper wincred
-;; Integrate git-gutter into magit
+;; Integrate git-gutter into magit (Not confirmed working)
 (add-hook 'git-gutter:update-hooks 'magit-after-revert-hook)
 (add-hook 'git-gutter:update-hooks 'magit-not-reverted-hook)
 
