@@ -45,6 +45,7 @@ I'm mostly typing these out as a memory exercise.  I'll lead with the handful of
 | `C->`/`C-<` | `multiple-cursors` | Add another cursor at the next/previous: {matching region if a selection is active; row if a selection is not active} |
 | `mouse-3` | `imenu` | Give a nice in-place code-navigation menu. |
 | `<C-tab>` | `jedi-mode` | Force auto-completion to trigger. (Does a pretty good job on its own, this is just the hammer.) |
+| `M-o` | *windows* | Custom binding to `other-window` to allow faster window-cycling.  (Default is `C-x o` as documented below.) |
 | `C-c .`/`C-c ,` | `jedi` | Go-to (come back from) definition of current name. |
 | `C-c g` | `git-gutter` | Force refresh of git-gutter markings (will currently get confused in non-saved state.) |
 | `C-x g` | `magit` | Spawn the root magit buffer that deals with the repository. |
