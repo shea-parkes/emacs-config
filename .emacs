@@ -24,6 +24,10 @@
 ;; Place a nice code-navigation menu under a right-click menu
 (global-set-key [mouse-3] 'imenu)
 
+;; Use the improved buffer menu by default
+;;   TODO: Come back through and add categories
+(global-set-key (kbd "C-x C-b") 'ibuffer)
+
 ;; Make it a bit easier to move around windows
 (global-set-key (kbd "M-o") 'other-window)
 
