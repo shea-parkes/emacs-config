@@ -66,9 +66,11 @@ I'm mostly typing these out as a memory exercise.  I'll lead with the handful of
 | `C-w`/`M-w` | *kill/yank* | "Cut" or "Copy" the selected region. |
 | `C-k` | *kill/yank* | Kill to the end of the line. |
 | `M-f`/`M-b`/`M-k`/`M-DEL` | *kill/yank* | Move/kill by word. |
+| `M-r` | *cursor* | Cycle cursor between top/middle/bottom of active buffer. |
 | `M-%` | *replace* | Go into a find/replace dialogue.  Can then do `y`/`n`/`!` to replace one/skip one/replace all.  Other keys available. |
 | `M-l` / `M-u` / `M-c` | *case conversion* | Convert the next word to lower-/upper-/proper- case. |
 | `C-x C-l` / `C-x C-u` | *case conversion* | Convert the region to lower-/upper- case. |
+| `<F11>` | *frames* | Go totally full screen. |
 | `C-x 1` | *windows* | Destroy all windows but the current one. |
 | `C-x 4 0` | *windows* | Destroys the current window and kills the associated buffer. |
 | `C-x 0` | *windows* | Destroy the current window. |
