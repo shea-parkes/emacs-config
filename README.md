@@ -50,6 +50,7 @@ I'm mostly typing these out as a memory exercise.  I'll lead with the handful of
 | `M-n`/`M-p` | `contextual` | Very dynamic shortcuts.  Cycles `M-x` history, `jedi` completion options and many more. |
 | `C-j` | `ido-mode` | Force evaluation of current text literal (i.e. do not use the first completion suggestion).  Useful to enter `dired` mode. |
 | `C-M-x` | `prog-mode` | Execute the current `defun` |
+| `C-;` | `prog-mode` | Add/remove comments (DWIM style). |
 | `C-c C-z` | `python-mode` | Switch to Python interpreter (prompt to launch if needed). |
 | `C-c C-r` | `python-mode` | Send region to Python interpreter. |
 | `C-c C-c` | `python-mode` | Send buffer to Python interpreter (automatically excludes `if __name__ == '__main__':` sections. |
