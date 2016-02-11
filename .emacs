@@ -145,5 +145,14 @@
 (setq markdown-command "pandoc")
 
 
+;; M-x package-install RET yaml-mode RET
+(require 'yaml-mode)
+;; Not part of `prog-mode`, so need to re-hook some minor modes
+(add-hook 'yaml-mode-hook #'whitespace-mode)
+(add-hook 'yaml-mode-hook #'show-paren-mode)
+(add-hook 'yaml-mode-hook #'electric-pair-mode)
+(add-hook 'yaml-mode-hook #'superword-mode)
+
+
 ;; M-x package-install RET ess RET
 (require 'ess-site)
