@@ -87,3 +87,4 @@ I'm mostly typing these out as a memory exercise.  I'll lead with the handful of
 | `M-x revert-buffer` | *buffers* | Reloads the associated file from disk. |
 | `C-x C-b` | *buffers* | Open up buffer of buffers. |
 | `s` / `d` / `x` | *buffers-list* | Mark a buffer for later saving/deleting. Then execute out marks. |
+| `M-x insert-char` | *inserting* | Insert a unicode character by name or code. |
