@@ -45,6 +45,7 @@
 ;;   Haven't gone to the external `flx-ido` implementation yet
 (require 'ido)
 (setq ido-enable-flex-matching t)
+(setq ido-separator "\n")
 (ido-mode t)
 
 ;; Activate visible whitespace for code files
