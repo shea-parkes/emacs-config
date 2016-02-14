@@ -8,8 +8,16 @@
 ;; Start the initial frame maximized
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
 
-;; Raise GC thresholds to modern levels (to ~32MB from ~1MB)
-(setq gc-cons-threshold 42000000)
+;; Raise GC thresholds to modern levels (to ~32MB from ~1MB) while in minibuffer
+;;   Borrowed from here: http://bling.github.io/blog/2016/01/18/why-are-you-changing-gc-cons-threshold/
+(defun my-minibuffer-setup-hook ()
+  (setq gc-cons-threshold 42000000))
+
+(defun my-minibuffer-exit-hook ()
+  (setq gc-cons-threshold 800000))
+
+(add-hook 'minibuffer-setup-hook #'my-minibuffer-setup-hook)
+(add-hook 'minibuffer-exit-hook #'my-minibuffer-exit-hook)
 
 ;; Remove tempations to utilize the GUI
 (menu-bar-mode -1)
