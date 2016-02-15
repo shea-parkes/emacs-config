@@ -61,7 +61,7 @@ I'm mostly typing these out as a memory exercise.  I'll lead with the handful of
 | `C-c C-c` | `python-mode` | Send buffer to Python interpreter (automatically excludes `if __name__ == '__main__':` sections. |
 | `C-M-h` | `python-mode` | Select the `defun` |
 | `C-M-a`/`C-M-e` | `python-mode` | Move to the beginning/end of the `defun` |
-| `C-c p` | `~python-mode` | Search the official Python 3 documentation. |
+| `C-c p` | `~python-mode` | Search the official Python 3 documentation. (A few buffers annoyingly use EWW, but couldn't customize that away.)|
 | `C-M-h`/`C-M-k` | `prog-mode` | Select / kill the current `defun`. |
 | `C-M-i` | `prog-mode` | Generic "completion" shortcut.  Doesn't do that much really.  Jedi has custom shortcut above. |
 | `M-!` / `M-&` | *shells* | Run a single system command (/asynchronously) |
