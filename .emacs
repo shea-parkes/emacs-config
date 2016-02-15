@@ -74,7 +74,6 @@
   "Search the official Python 3 documentation"
   (interactive "sSearch Python 3 Docs for: ")
   (browse-url (concat "https://docs.python.org/3/search.html?q=" search_string)))
-
 (global-set-key (kbd "C-c p") 'python-docs)
 
 ;; Setup where to pull third party packages from
@@ -102,8 +101,7 @@
 (require 'git-gutter)
 (global-git-gutter-mode +1)
 ;; Needs to be told to do live diffs
-(custom-set-variables
- '(git-gutter:update-interval 2))
+(setq git-gutter:update-interval 2)
 ;; Give a keybinding to force refresh (it gets confused)
 (global-set-key (kbd "C-c g") 'git-gutter)
 
