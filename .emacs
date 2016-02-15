@@ -69,6 +69,14 @@
 ;; Adjust when to flag a line as too-long via font
 (setq whitespace-line-column 100)
 
+;; Custom function to search Python 3 docs
+(defun python-docs (search_string)
+  "Search the official Python 3 documentation"
+  (interactive "sSearch Python 3 Docs for: ")
+  (browse-url (concat "https://docs.python.org/3/search.html?q=" search_string)))
+
+(global-set-key (kbd "C-c p") 'python-docs)
+
 ;; Setup where to pull third party packages from
 (require 'package)
 (add-to-list 'package-archives
