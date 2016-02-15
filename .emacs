@@ -29,6 +29,9 @@
 ;; React normally when typing with a region active
 (delete-selection-mode 1)
 
+;; Stop beeping when I hit the end of the file
+(setq ring-bell-function 'ignore)
+
 ;; Place a nice code-navigation menu under a right-click menu
 (global-set-key [mouse-3] 'imenu)
 
