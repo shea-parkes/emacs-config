@@ -76,6 +76,29 @@
   (browse-url (concat "https://docs.python.org/3/search.html?q=" search_string)))
 (add-hook 'python-mode-hook (lambda ()(local-set-key (kbd "C-c d") 'python-docs)))
 
+;; Configure spell checking
+;;   Needs `hunspell` in %PATH%
+;;   Snag `hunspell` from ezwinports (should come with en_US dictionary files)
+;; Below was somewhat configuration by coincidence.  Borrowed heavily from:
+;;   http://www.nextpoint.se/?p=656
+;;   http://www.mygooglest.com/fni/.emacs
+(require 'flyspell)
+(setq-default ispell-program-name "hunspell")
+(setq ispell-really-hunspell t)
+(setq ispell-dictionary "en_US")
+(setq ispell-dictionary-alist '(("en_US"
+                                 "[[:alpha:]]"
+                                 "[^[:alpha:]]"
+                                 "[']"
+                                  t
+                                  ("-d" "en_US")
+                                  nil
+                                  utf-8)))
+(setq ispell-local-dictionary-alist ispell-dictionary-alist)
+(setq ispell-hunspell-dictionary-alist ispell-dictionary-alist)
+(add-hook 'text-mode-hook (lambda () (flyspell-mode 1)))
+(add-hook 'prog-mode-hook (lambda () (flyspell-prog-mode)))
+
 ;; Setup where to pull third party packages from
 (require 'package)
 (add-to-list 'package-archives
