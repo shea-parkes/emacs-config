@@ -163,6 +163,13 @@
 (setq markdown-command "pandoc")
 
 
+;; M-x package-install RET fill-column-indicator RET
+(require 'fill-column-indicator)
+(add-hook 'prog-mode-hook (lambda () (set-fill-column 100)))
+;; Enable for most programming modes
+(add-hook 'prog-mode-hook #'fci-mode)
+
+
 ;; M-x package-install RET yaml-mode RET
 (require 'yaml-mode)
 ;; Not part of `prog-mode`, so need to re-hook some minor modes
