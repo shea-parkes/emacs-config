@@ -74,7 +74,7 @@
   "Search the official Python 3 documentation"
   (interactive "sSearch Python 3 Docs for: ")
   (browse-url (concat "https://docs.python.org/3/search.html?q=" search_string)))
-(global-set-key (kbd "C-c p") 'python-docs)
+(add-hook 'python-mode-hook (lambda ()(local-set-key (kbd "C-c d") 'python-docs)))
 
 ;; Setup where to pull third party packages from
 (require 'package)
