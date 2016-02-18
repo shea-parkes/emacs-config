@@ -23,6 +23,9 @@
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 
+;; Do not show the welcome screen (drops straight into God Mode now, see below)
+(setq inhibit-startup-message t)
+
 ;; Use a more sane cursor type
 (setq-default cursor-type 'bar)
 
