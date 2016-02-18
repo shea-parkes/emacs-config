@@ -26,7 +26,7 @@
 ;; Do not show the welcome screen (drops straight into God Mode now, see below)
 (setq inhibit-startup-message t)
 
-;; Use a more sane cursor type
+;; Use a more sane cursor type (adjusted by god-mode below)
 (setq-default cursor-type 'bar)
 
 ;; React normally when typing with a region active
