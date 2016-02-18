@@ -101,8 +101,9 @@
 
 ;; Setup where to pull third party packages from
 (require 'package)
-(add-to-list 'package-archives
-             '("melpa" . "http://stable.melpa.org/packages/") t)
+(add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/") t)
+;; Only enable the bleeding-edge MELPA when a package doesn't utilize tags (e.g. god-mode)
+;; (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
 (package-initialize)
 
 
@@ -200,6 +201,42 @@
 (add-hook 'yaml-mode-hook #'show-paren-mode)
 (add-hook 'yaml-mode-hook #'electric-pair-mode)
 (add-hook 'yaml-mode-hook #'superword-mode)
+
+
+;; M-x package-install RET god-mode RET
+;; Only available on MELPA unstable for now
+(require 'god-mode)
+;; Turn it on by default
+(god-mode)
+(global-set-key (kbd "<escape>") 'god-local-mode)
+;; I hate the minimize keybinding anyway
+(global-set-key (kbd "C-z") 'god-local-mode)
+;; Get used to VIM style entry into insert mode
+(define-key god-local-mode-map (kbd "i") 'god-local-mode)
+;; Make it easier to work with windows
+(global-set-key (kbd "C-x C-1") 'delete-other-windows)
+(global-set-key (kbd "C-x C-2") 'split-window-below)
+(global-set-key (kbd "C-x C-3") 'split-window-right)
+(global-set-key (kbd "C-x C-0") 'delete-window)
+(global-set-key (kbd "C-x C-4 C-f") 'ido-find-file-other-window)
+(global-set-key (kbd "C-x C-4 C-b") 'ido-switch-buffer-other-window)
+(global-set-key (kbd "C-x C-4 C-d") 'dired-other-window)
+(global-set-key (kbd "C-x C-4 C-0") 'kill-buffer-and-window)
+(global-set-key (kbd "C-x C-k") 'ido-kill-buffer)
+;; And some other convenience mappings
+;; (global-set-key (kbd "C-x C-g") 'magit-status) ;; C-g is quit
+;; (global-set-key (kbd "C-c C-g") 'git-gutter) ;; C-g is quit
+(add-hook 'python-mode-hook (lambda ()(local-set-key (kbd "C-c C-d") 'python-docs)))
+
+
+;; Toggle cursor to give strong visual clues
+;; Borrowed from god-mode readme
+(defun my-update-cursor ()
+  (setq cursor-type (if (or god-local-mode buffer-read-only)
+                        'box
+                      'bar)))
+(add-hook 'god-mode-enabled-hook 'my-update-cursor)
+(add-hook 'god-mode-disabled-hook 'my-update-cursor)
 
 
 ;; M-x package-install RET ess RET
