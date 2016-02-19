@@ -71,6 +71,10 @@
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 ;; Adjust when to flag a line as too-long via font
 (setq whitespace-line-column 100)
+;; Show empty lines at the end of the file while we're at it
+(setq-default indicate-empty-lines t)
+;; And ensure there is a newline at the end (even though the above does not show it)
+(setq require-final-newline t)
 
 ;; Custom function to search Python 3 docs
 (defun python-docs (search_string)
