@@ -230,8 +230,6 @@
 ;; (global-set-key (kbd "C-x C-g") 'magit-status) ;; C-g is quit
 ;; (global-set-key (kbd "C-c C-g") 'git-gutter) ;; C-g is quit
 (add-hook 'python-mode-hook (lambda ()(local-set-key (kbd "C-c C-d") 'python-docs)))
-
-
 ;; Toggle cursor to give strong visual clues
 ;; Borrowed from god-mode readme
 (defun my-update-cursor ()
@@ -240,6 +238,11 @@
                       'bar)))
 (add-hook 'god-mode-enabled-hook 'my-update-cursor)
 (add-hook 'god-mode-disabled-hook 'my-update-cursor)
+
+
+;; M-x package-install RET drag-stuff RET
+(require 'drag-stuff)
+(drag-stuff-global-mode)
 
 
 ;; M-x package-install RET ess RET

@@ -72,6 +72,8 @@ I'm mostly typing these out as a memory exercise.  I'll lead with the handful of
 | `C-w`/`M-w` | *kill/yank* | "Cut" or "Copy" the selected region. |
 | `C-k` | *kill/yank* | Kill to the end of the line. |
 | `M-f`/`M-b`/`M-k`/`M-DEL` | *kill/yank* | Move/kill by word. |
+| `M-up` / `M-down` | `drag-stuff` | Move a line/region up/down. |
+| `M-left` / `M-right` | `drag-stuff` | Move a word left/right. |
 | `M-g g` | *cursor* | Goto a specific line. |
 | `M-r` | *cursor* | Cycle cursor between top/middle/bottom of active buffer. |
 | `mouse-2` | *spelling* | Show suggested words (note: this is a middle click) |
