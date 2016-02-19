@@ -23,7 +23,7 @@
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 
-;; Do not show the welcome screen (drops straight into God Mode now, see below)
+;; Do not show the welcome screen (drops straight into god-mode now, see below)
 (setq inhibit-startup-message t)
 
 ;; Use a more sane cursor type (adjusted by god-mode below)
@@ -34,6 +34,10 @@
 
 ;; Stop beeping when I hit the end of the file
 (setq ring-bell-function 'ignore)
+
+;; Don't jump by half a screen when scrolling on the boundaries
+(setq scroll-step 1) ;; Scroll one line a time
+(setq scroll-margin 4) ;; Scroll before you hit the actual edge
 
 ;; Place a nice code-navigation menu under a right-click menu
 (global-set-key [mouse-3] 'imenu)
