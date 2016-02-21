@@ -5,6 +5,13 @@
 ;;;      One with introspection tools such as `pylint` and `jedi`.
 ;;; Code:
 
+;; Ensure an actual Emacs server process is running.
+;; If it is not, go ahead and start one up.
+;; Do this so subsequent calls to emacsclientw.exe can hook into it.
+(require 'server)
+(or (server-running-p)
+    (server-start))
+
 ;; Start the initial frame maximized
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
 
