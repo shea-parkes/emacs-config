@@ -33,10 +33,10 @@ The two challenges are:
   * Ensuring new files are opened in existing Emacs instances (kind of tricky)
 
 Succinctly:
-  * Use a code snippet at the top of `.emacs` to ensure the Emacs server is running
+  * Use a code snippet at the top of `.emacs` to ensure the Emacs server is running (already present in this `.emacs`)
   * Make `%ALTERNATE_EDITOR%` and point it to `runemacs.exe`
   * Make `%EMACS_SERVER_FILE%` and point it to `~\emacs.d\server\server` (This file will only exist while an Emacs server is running)
-  * Make appropriate registry entries (mostly calling `emacsclientw.exe`)
+  * Make appropriate registry entries (mostly calling `emacsclientw.exe -n %1`, or a pass-thru batch script that sets up the environment first)
 
 The server will still nicely shut down when the client is closed.
 
