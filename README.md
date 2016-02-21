@@ -22,6 +22,24 @@ It's probably too awkward to directly check this repository out into my `%UserPr
 
 For now, I'll leave commented-out `package-install` calls littered in `.emacs`.  The idea would be to skim `.emacs` during each system setup to refresh myself on my customizations and install each package manually.  A nice enhancement might be to implement the light-weight state function offered by Yusuke Tsutsumi [here](http://y.tsutsumi.io/emacs-from-scratch-part-1-extending-emacs-basics.html).  [el-get](https://github.com/dimitri/el-get) is another possible option, but it claims to play only so-so with Windows.
 
+### Windows Explorer Context Menu Integration
+
+I largely followed the breadcrumbs in these links:
+  * [Add Anything to Explorer Context Menu](http://www.howtogeek.com/107965/how-to-add-any-application-shortcut-to-windows-explorers-context-menu/)
+  * [Open file in existing Emacs on Windows](http://stackoverflow.com/questions/15606188/open-file-in-existing-emacs-frame-windows)
+
+The two challenges are:
+  * Adding an Emacs entry to the registry (not that hard)
+  * Ensuring new files are opened in existing Emacs instances (kind of tricky)
+
+Succinctly:
+  * Use a code snippet at the top of `.emacs` to ensure the Emacs server is running
+  * Make `%ALTERNATE_EDITOR%` and point it to `runemacs.exe`
+  * Make `%EMACS_SERVER_FILE%` and point it to `~\emacs.d\server\server` (This file will only exist while an Emacs server is running)
+  * Make appropriate registry entries (mostly calling `emacsclientw.exe`)
+
+The server will still nicely shut down when the client is closed.
+
 #### Assisting Python environment
 
 This configuration depends upon having a helpful python environment at the front of your `%PATH%` when launching emacs.  This environment should contain any code introspection tools used in packages below (e.g. `pylint` and `jedi`).  `jedi` in particular would likely benefit from this python environment being very similar to the environment you would actually execute code in (i.e. contain packages such as `sqlalchemy` if you're going to use them in your code).  `emacs-jedi` also wants the `epc` package installed in this environment.
