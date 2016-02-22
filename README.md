@@ -25,6 +25,7 @@ For now, I'll leave commented-out `package-install` calls littered in `.emacs`. 
 ### Windows Explorer Context Menu Integration
 
 I largely followed the breadcrumbs in these links:
+  * [Emacsclient launch options](https://www.gnu.org/software/emacs/manual/html_node/emacs/emacsclient-Options.html)
   * [Add Anything to Explorer Context Menu](http://www.howtogeek.com/107965/how-to-add-any-application-shortcut-to-windows-explorers-context-menu/)
   * [Open file in existing Emacs on Windows](http://stackoverflow.com/questions/15606188/open-file-in-existing-emacs-frame-windows)
 
@@ -34,11 +35,11 @@ The two challenges are:
 
 Succinctly:
   * Use a code snippet at the top of `.emacs` to ensure the Emacs server is running (already present in this `.emacs`)
-  * Make `%ALTERNATE_EDITOR%` and point it to `runemacs.exe`
-  * Make `%EMACS_SERVER_FILE%` and point it to `~\emacs.d\server\server` (This file will only exist while an Emacs server is running)
+  * Make `%ALTERNATE_EDITOR%` and point it to `runemacs.exe` (or always pass `--alternate-editor` to `emacsclientw.exe`)
+  * Make `%EMACS_SERVER_FILE%` and point it to `~\emacs.d\server\server` (This file will only exist while an Emacs server is running) (or always pass `--server-file` to `emacsclientw.exe`)
   * Make appropriate registry entries (mostly calling `emacsclientw.exe -n %1`, or a pass-thru batch script that sets up the environment first)
 
-The server will still nicely shut down when the client is closed.
+The server should still nicely shut down when the client is closed.
 
 #### Assisting Python environment
 
@@ -78,7 +79,7 @@ I'm mostly typing these out as a memory exercise.  I'll lead with the handful of
 | `M-n`/`M-p` | `contextual` | Very dynamic shortcuts.  Cycles `M-x` history, `jedi` completion options and many more. |
 | `C-j` | `ido-mode` | Force evaluation of current text literal (i.e. do not use the first completion suggestion).  Useful to enter `dired` mode. |
 | `C-M-x` | `prog-mode` | Execute the current `defun` |
-| `C-;` | `prog-mode` | Add/remove comments (DWIM style). |
+| `M-;` | `prog-mode` | Add/remove comments (DWIM style). |
 | `C-c C-z` | `python-mode` | Switch to Python interpreter (prompt to launch if needed). |
 | `C-c C-r` | `python-mode` | Send region to Python interpreter. |
 | `C-c C-c` | `python-mode` | Send buffer to Python interpreter (automatically excludes `if __name__ == '__main__':` sections. |
