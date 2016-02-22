@@ -22,7 +22,7 @@ It's probably too awkward to directly check this repository out into my `%UserPr
 
 For now, I'll leave commented-out `package-install` calls littered in `.emacs`.  The idea would be to skim `.emacs` during each system setup to refresh myself on my customizations and install each package manually.  A nice enhancement might be to implement the light-weight state function offered by Yusuke Tsutsumi [here](http://y.tsutsumi.io/emacs-from-scratch-part-1-extending-emacs-basics.html).  [el-get](https://github.com/dimitri/el-get) is another possible option, but it claims to play only so-so with Windows.
 
-### Windows Explorer Context Menu Integration
+#### Windows Explorer Context Menu Integration
 
 I largely followed the breadcrumbs in these links:
   * [Emacsclient launch options](https://www.gnu.org/software/emacs/manual/html_node/emacs/emacsclient-Options.html)
@@ -40,6 +40,15 @@ Succinctly:
   * Make appropriate registry entries (mostly calling `emacsclientw.exe -n %1`, or a pass-thru batch script that sets up the environment first)
 
 The server should still nicely shut down when the client is closed.
+
+#### Git Integration
+
+`Magit` is a very nice package that mostly will handle all the git integration.  However, it does need/benefit from the following:
+  * Be sure that `git` is on `%PATH%`
+  * Be sure `credential.helper = wincred` in `~/.gitconfig` so passwords can be cached
+  * Customize `GIT_ASKPASS` at runtime to force popups (already in `~/.emacs`)
+
+TODO: Configure and document using Emacs as commit editor from `cmd.exe`.
 
 #### Assisting Python environment
 

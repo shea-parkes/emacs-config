@@ -167,7 +167,8 @@
 (global-magit-file-mode t)
 ;; Likely need to turn on credential management with:
 ;;   git config --global credential.helper wincred
-;; Confirm with:
+;; Confirm/add explicitly in `~/.gitconfig`
+;; Confirm at command line with:
 ;;   git config --global --get credential.helper
 ;; Also swap it so the password prompt is a popup when it's needed
 (setenv "GIT_ASKPASS" "git-gui--askpass")
