@@ -264,7 +264,13 @@
 
 ;; M-x package-install RET iedit RET
 (require 'iedit)
-
+;; Allow RET to exit iedit-mode (like other search/multiple edit modes)
+;;   * http://stackoverflow.com/questions/25238760/how-do-i-exit-iedit-mode-with-enter
+(defun quit-iedit-mode ()
+  "Turn off iedit-mode."
+  (interactive)
+  (iedit-mode -1))
+(define-key iedit-mode-keymap (kbd "RET") 'quit-iedit-mode)
 
 ;; M-x package-install RET ess RET
 (require 'ess-site)
