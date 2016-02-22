@@ -61,6 +61,10 @@ I'm mostly typing these out as a memory exercise.  I'll lead with the handful of
 | Shortcut | ~Mode | Description |
 | :------- | :---- | :---------- |
 | `C->`/`C-<` | `multiple-cursors` | Add another cursor at the next/previous: {matching region if a selection is active; row if a selection is not active} |
+| `C-;` | `iedit-mode` | Enter/exit iedit mode. |
+| `M-0 C-;` | `iedit-mode` | Enter iedit mode, but only within the current defun. |
+| `C-'` | `iedit-mode` | While in iedit-mode, limit display to matched lines. (Toggle) |
+| `Tab` / `Shift-Tab` | `iedit-mode` | Cycle through the matching selections. |
 | `mouse-3` | `imenu` | Give a nice in-place code-navigation menu. |
 | `<ESC>` / `C-z` / `i` | `god-mode` | Enter/exit god-mode (to save my pinkies). |
 | `<C-tab>` | `jedi-mode` | Force auto-completion to trigger. (Does a pretty good job on its own, this is just the hammer.) |

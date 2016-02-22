@@ -100,6 +100,7 @@
 ;; Below was somewhat configuration by coincidence.  Borrowed heavily from:
 ;;   http://www.nextpoint.se/?p=656
 ;;   http://www.mygooglest.com/fni/.emacs
+(setq flyspell-auto-correct-binding (kbd "C-:"))  ;; Move aside default keybinding for iedit
 (require 'flyspell)
 (setq-default ispell-program-name "hunspell")
 (setq ispell-really-hunspell t)
@@ -258,6 +259,10 @@
 ;; M-x package-install RET drag-stuff RET
 (require 'drag-stuff)
 (drag-stuff-global-mode)
+
+
+;; M-x package-install RET iedit RET
+(require 'iedit)
 
 
 ;; M-x package-install RET ess RET
