@@ -165,16 +165,26 @@
 ;; Try and let magit handle setting up minor modes and shortcuts for git-backed files
 ;;   I'm not convinced this gets auto-revert correct, but I do think it's the way of the future
 (global-magit-file-mode t)
-;; Likely need to turn on credential management with:
-;;   git config --global credential.helper wincred
-;; Confirm/add explicitly in `~/.gitconfig`
-;; Confirm at command line with:
-;;   git config --global --get credential.helper
+;; While using magit, it's most convenient to use Windows credential storage
+;;   GitHub Desktop doesn't like that setting and will continuously remove it
+;;   The function and hook below continuously applies it when using magit
+(defun force-git-wincred ()
+  "Force Git to use wincred again"
+  (start-process
+     "force-git-wincred"
+     nil
+     "git"
+     "config"
+     "--global"
+     "credential.helper"
+     "wincred"))
+(add-hook 'magit-pre-display-buffer-hook 'force-git-wincred)
 ;; Also swap it so the password prompt is a popup when it's needed
 (setenv "GIT_ASKPASS" "git-gui--askpass")
 ;; Integrate git-gutter into magit (Not confirmed working)
 (add-hook 'git-gutter:update-hooks 'magit-after-revert-hook)
 (add-hook 'git-gutter:update-hooks 'magit-not-reverted-hook)
+
 
 ;; M-x package-install RET multiple-cursors RET
 (require 'multiple-cursors)
