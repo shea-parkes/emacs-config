@@ -45,10 +45,10 @@ The server should still nicely shut down when the client is closed.
 
 `Magit` is a very nice package that mostly will handle all the git integration.  However, it does need/benefit from the following:
   * Be sure that `git` is on `%PATH%`
-  * Be sure `credential.helper = wincred` in `~/.gitconfig` so passwords can be cached
-  * Customize `GIT_ASKPASS` at runtime to force popups (already in `~/.emacs`)
-
-TODO: Configure and document using Emacs as commit editor from `cmd.exe`.
+  * Some run-time munging of ~`.gitconfig` (that is already embedded in this `.emacs`)
+  * Setting `core.editor = emacsclient` to allow Emacs integration with command line `git` usage
+    * Still only works if an emacs server is already running (see above)
+	* Close out the commit message just like `magit` shortcuts below (e.g. `C-c C-c` / `C-c C-k`)
 
 #### Assisting Python environment
 
