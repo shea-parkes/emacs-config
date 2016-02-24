@@ -79,10 +79,11 @@ I'm mostly typing these out as a memory exercise.  I'll lead with the handful of
 | `M-0 C-;` | `iedit-mode` | Enter iedit mode, but only within the current defun. |
 | `C-'` | `iedit-mode` | While in iedit-mode, limit display to matched lines. (Toggle) |
 | `Tab` / `Shift-Tab` | `iedit-mode` | Cycle through the matching selections. |
+| `C-=` / `M-- C-=` | `expand-region` | Iteratively expand/contract active region to word/section/function/etc. |
 | `mouse-3` | `imenu` | Give a nice in-place code-navigation menu. |
 | `<ESC>` / `C-z` / `i` | `god-mode` | Enter/exit god-mode (to save my pinkies). |
-| `<C-tab>` | `jedi-mode` | Force auto-completion to trigger. (Does a pretty good job on its own, this is just the hammer.) |
 | `M-o` | *windows* | Custom binding to `other-window` to allow faster window-cycling.  (Default is `C-x o` as documented below.) |
+| `<C-tab>` | `jedi-mode` | Force auto-completion to trigger. (Does a pretty good job on its own, this is just the hammer.) |
 | `C-c .`/`C-c ,` | `jedi` | Go-to (come back from) definition of current name. |
 | `C-c g` | `git-gutter` | Force refresh of git-gutter markings (will currently get confused in non-saved state.) |
 | `C-x g` | `magit` | Spawn the root magit buffer that deals with the repository. |

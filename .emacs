@@ -299,6 +299,11 @@
 (define-key iedit-mode-keymap (kbd "RET") 'quit-iedit-mode)
 
 
+;; M-x package-install RET expand-region RET
+(require 'expand-region)
+(global-set-key (kbd "C-=") 'er/expand-region)
+
+
 ;; M-x package-install RET ess RET
 (require 'ess-site)
 
