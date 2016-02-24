@@ -183,7 +183,18 @@
      "--global"
      "credential.helper"
      "wincred"))
+(defun force-git-emacsclient ()
+  "Force Git to use emacsclient again"
+  (start-process
+     "force-git-emacsclient"
+     nil
+     "git"
+     "config"
+     "--global"
+     "core.editor"
+     "emacsclient"))
 (add-hook 'magit-pre-display-buffer-hook 'force-git-wincred)
+(add-hook 'magit-pre-display-buffer-hook 'force-git-emacsclient)
 ;; Also swap it so the password prompt is a popup when it's needed
 (setenv "GIT_ASKPASS" "git-gui--askpass")
 ;; Integrate git-gutter into magit (Not confirmed working)
