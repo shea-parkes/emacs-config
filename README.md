@@ -90,6 +90,7 @@ I'm mostly typing these out as a memory exercise.  I'll lead with the handful of
 | `C-c M-g` | `magit` | Spawn magit menu for **this file**. (Nice for `blame` or contextual `log`.) |
 | `C-c C-c` / `C-c C-k` | `magit` | Finish (/cancel) a commit message. |
 | `M-n`/`M-p` | `contextual` | Very dynamic shortcuts.  Cycles `M-x` history, `jedi` completion options and many more. |
+| `C-SPC C-SPC` / `C-u C-SPC` | *marks* | Push a mark onto the `mark-ring` (without starting a region) / traverse backwards through the `mark-ring`. |
 | `C-j` | `ido-mode` | Force evaluation of current text literal (i.e. do not use the first completion suggestion).  Useful to enter `dired` mode. |
 | `C-M-x` | `prog-mode` | Execute the current `defun` |
 | `M-;` | `prog-mode` | Add/remove comments (DWIM style). |
