@@ -48,7 +48,7 @@ The server should still nicely shut down when the client is closed.  However, so
   * Some run-time munging of ~`.gitconfig` (that is already embedded in this `.emacs`)
   * Setting `core.editor = emacsclient` to allow Emacs integration with command line `git` usage
     * Still only works if an emacs server is already running (see above)
-	* Close out the commit message just like `magit` shortcuts below (e.g. `C-c C-c` / `C-c C-k`)
+	* `magit` takes over the commit message editing (i.e. `C-c C-c` / `C-c C-k` work like below)
 
 #### Assisting Python environment
 
