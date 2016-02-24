@@ -60,6 +60,10 @@ Be sure to also include the `/Scripts` folder of the environment in your `%PATH%
 
 Most package specific notes are directly in the `.emacs` file to keep the configuration and documentation cognitively close together.
 
+### Profiling startup
+
+Periodic profiling can be helpful.  The Emacs Start Up Profiler package is very useful for this.  The majority of time spent on startup on the current config is to load `magit`.  I consider this worth the pain.  A lesser burden is `ESS`.  Other packages are largely negligible.
+
 ### Fringe vs Margin
 
 Emacs has two "gutter" areas. The `fringe` is the inner one and the `margin` is the outer one.  Various packages/modes try to take advantage of these areas, but in general only one can use a given area at once.  I try to note which package/mode is using which area in notes in the config file.

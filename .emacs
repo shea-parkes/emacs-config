@@ -5,6 +5,11 @@
 ;;;      One with introspection tools such as `pylint` and `jedi`.
 ;;; Code:
 
+;; Raise the GC threshold while running this init script
+;;   Having one large pause at the end is better than 40+ medium pauses during launch
+;;   Restored at the end to interactive levels, but shaves 0.5 seconds off of load
+(setq gc-cons-threshold 42000000)
+
 ;; Ensure an actual Emacs server process is running.
 ;; If it is not, go ahead and start one up.
 ;; Do this so subsequent calls to emacsclientw.exe can hook into it.
@@ -282,5 +287,10 @@
   (iedit-mode -1))
 (define-key iedit-mode-keymap (kbd "RET") 'quit-iedit-mode)
 
+
 ;; M-x package-install RET ess RET
 (require 'ess-site)
+
+
+;; Restore the GC threshold to more appropriate levels for interactive use
+(setq gc-cons-threshold 800000)
