@@ -376,6 +376,7 @@
 (add-hook 'yaml-mode-hook #'show-paren-mode)
 (add-hook 'yaml-mode-hook #'electric-pair-mode)
 (add-hook 'yaml-mode-hook #'superword-mode)
+(add-hook 'yaml-mode-hook (lambda () (flyspell-prog-mode)))
 
 
 ;; M-x package-install RET ess RET
