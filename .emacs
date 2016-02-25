@@ -247,7 +247,7 @@
 
 
 ;; ============
-;; PRESENTATION
+;; Presentation
 ;; ============
 
 ;; M-x package-install RET zenburn RET
