@@ -48,6 +48,71 @@
 
 
 
+;; ============
+;; Presentation
+;; ============
+
+;; Remove tempations to utilize the GUI
+(menu-bar-mode -1)
+(tool-bar-mode -1)
+
+;; Use a more sane cursor type (adjusted by god-mode below)
+(setq-default cursor-type 'bar)
+
+;; Activate visible whitespace for code files
+(add-hook 'prog-mode-hook #'whitespace-mode)
+;; Be refined in what we flag.  Just the bad stuff and then tabs/spaces via marks
+(setq whitespace-style (quote
+   (face trailing lines space-mark tab-mark)))
+;; Kill trailing whitespace on save
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+;; Adjust when to flag a line as too-long via font
+(setq whitespace-line-column 100)
+
+;; Show empty lines at the end of the file while we're at it
+(setq-default indicate-empty-lines t)
+;; And ensure there is a newline at the end (even though the above does not show it)
+(setq require-final-newline t)
+
+;; Insert matching parens like a real editor
+(add-hook 'prog-mode-hook #'electric-pair-mode)
+;; And highlight the matching parens
+(add-hook 'prog-mode-hook #'show-paren-mode)
+;; Actually, highlight the whole expression
+(setq show-paren-style 'expression)
+
+
+
+;; =============
+;; Introspection
+;; =============
+
+;; Configure spell checking
+;;   Needs `hunspell` in %PATH%
+;;   Snag `hunspell` from ezwinports (should come with en_US dictionary files)
+;; Below was somewhat configuration by coincidence.  Borrowed heavily from:
+;;   http://www.nextpoint.se/?p=656
+;;   http://www.mygooglest.com/fni/.emacs
+(setq flyspell-auto-correct-binding (kbd "C-:"))  ;; Move aside default keybinding for iedit
+(require 'flyspell)
+(setq-default ispell-program-name "hunspell")
+(setq ispell-really-hunspell t)
+(setq ispell-dictionary "en_US")
+(setq ispell-dictionary-alist '(("en_US"
+                                 "[[:alpha:]]"
+                                 "[^[:alpha:]]"
+                                 "[']"
+                                  t
+                                  ("-d" "en_US")
+                                  nil
+                                  utf-8)))
+(setq ispell-local-dictionary-alist ispell-dictionary-alist)
+(setq ispell-hunspell-dictionary-alist ispell-dictionary-alist)
+(add-hook 'text-mode-hook (lambda () (flyspell-mode 1)))
+(add-hook 'prog-mode-hook (lambda () (flyspell-prog-mode)))
+
+
+
 ;; ========
 ;; Movement
 ;; ========
@@ -90,41 +155,6 @@
 
 
 
-;; ============
-;; Presentation
-;; ============
-
-;; Remove tempations to utilize the GUI
-(menu-bar-mode -1)
-(tool-bar-mode -1)
-
-;; Use a more sane cursor type (adjusted by god-mode below)
-(setq-default cursor-type 'bar)
-
-;; Activate visible whitespace for code files
-(add-hook 'prog-mode-hook #'whitespace-mode)
-;; Be refined in what we flag.  Just the bad stuff and then tabs/spaces via marks
-(setq whitespace-style (quote
-   (face trailing lines space-mark tab-mark)))
-;; Kill trailing whitespace on save
-(add-hook 'before-save-hook 'delete-trailing-whitespace)
-;; Adjust when to flag a line as too-long via font
-(setq whitespace-line-column 100)
-
-;; Show empty lines at the end of the file while we're at it
-(setq-default indicate-empty-lines t)
-;; And ensure there is a newline at the end (even though the above does not show it)
-(setq require-final-newline t)
-
-;; Insert matching parens like a real editor
-(add-hook 'prog-mode-hook #'electric-pair-mode)
-;; And highlight the matching parens
-(add-hook 'prog-mode-hook #'show-paren-mode)
-;; Actually, highlight the whole expression
-(setq show-paren-style 'expression)
-
-
-
 ;; ================
 ;; Custom Functions
 ;; ================
@@ -135,36 +165,6 @@
   (interactive "sSearch Python 3 Docs for: ")
   (browse-url (concat "https://docs.python.org/3/search.html?q=" search_string)))
 (add-hook 'python-mode-hook (lambda ()(local-set-key (kbd "C-c d") 'python-docs)))
-
-
-
-;; ==============
-;; Spell Checking
-;; ==============
-
-;; Configure spell checking
-;;   Needs `hunspell` in %PATH%
-;;   Snag `hunspell` from ezwinports (should come with en_US dictionary files)
-;; Below was somewhat configuration by coincidence.  Borrowed heavily from:
-;;   http://www.nextpoint.se/?p=656
-;;   http://www.mygooglest.com/fni/.emacs
-(setq flyspell-auto-correct-binding (kbd "C-:"))  ;; Move aside default keybinding for iedit
-(require 'flyspell)
-(setq-default ispell-program-name "hunspell")
-(setq ispell-really-hunspell t)
-(setq ispell-dictionary "en_US")
-(setq ispell-dictionary-alist '(("en_US"
-                                 "[[:alpha:]]"
-                                 "[^[:alpha:]]"
-                                 "[']"
-                                  t
-                                  ("-d" "en_US")
-                                  nil
-                                  utf-8)))
-(setq ispell-local-dictionary-alist ispell-dictionary-alist)
-(setq ispell-hunspell-dictionary-alist ispell-dictionary-alist)
-(add-hook 'text-mode-hook (lambda () (flyspell-mode 1)))
-(add-hook 'prog-mode-hook (lambda () (flyspell-prog-mode)))
 
 
 
