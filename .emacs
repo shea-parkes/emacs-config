@@ -293,7 +293,6 @@
 (setq flyspell-lazy-window-idle-seconds 6) ;; This scans the whole window
 
 
-
 ;; M-x package-install RET jedi RET
 ;; Jedi drags along the maligned `auto-complete` package
 ;;   Could install an additional package to integrate with `company`, but didn't seem to be worth it
