@@ -284,6 +284,16 @@
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
 
+;; M-x package-install RET flyspell-lazy RET
+(require 'flyspell-lazy)
+;; Flyspell is only loaded via hooks, so just enabling this should live here should be enough
+(flyspell-lazy-mode 1)
+;; Be a little more aggressive than the lazy defaults
+(setq flyspell-lazy-idle-seconds 2) ;; This scans just the recent changes
+(setq flyspell-lazy-window-idle-seconds 6) ;; This scans the whole window
+
+
+
 ;; M-x package-install RET jedi RET
 ;; Jedi drags along the maligned `auto-complete` package
 ;;   Could install an additional package to integrate with `company`, but didn't seem to be worth it
