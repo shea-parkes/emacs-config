@@ -372,6 +372,7 @@
 ;; M-x package-install RET avy RET
 (require 'avy)
 (global-set-key (kbd "C-'") 'avy-goto-word-1)
+(global-set-key (kbd "C-\"") 'avy-goto-char-2)
 (define-key isearch-mode-map (kbd "C-'") 'avy-isearch)
 
 

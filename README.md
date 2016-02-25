@@ -80,7 +80,7 @@ I'm mostly typing these out as a memory exercise.  I'll lead with the handful of
 | `C-'` | `iedit-mode` | While in iedit-mode, limit display to matched lines. (Toggle) |
 | `Tab` / `Shift-Tab` | `iedit-mode` | Cycle through the matching selections. |
 | `C-=` / `M-- C-=` | `expand-region` | Iteratively expand/contract active region to word/section/function/etc. |
-| `C-'` | `avy` | Start avy jump process.  (Works in iSearch as well.) |
+| `C-'` / `C-"` | `avy` | Start avy jump process on word/2-chars.  (Works in iSearch as well.) |
 | `mouse-3` | `imenu` | Give a nice in-place code-navigation menu. |
 | `<ESC>` / `C-z` / `i` | `god-mode` | Enter/exit god-mode (to save my pinkies). |
 | `M-o` | *windows* | Custom binding to `other-window` to allow faster window-cycling.  (Default is `C-x o` as documented below.) |
