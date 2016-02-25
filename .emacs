@@ -65,7 +65,7 @@
 (setq whitespace-style (quote
    (face trailing lines space-mark tab-mark)))
 ;; Kill trailing whitespace on save
-(add-hook 'before-save-hook 'delete-trailing-whitespace)
+(add-hook 'before-save-hook #'delete-trailing-whitespace)
 ;; Adjust when to flag a line as too-long via font
 (setq whitespace-line-column 100)
 
@@ -236,13 +236,13 @@
      "--global"
      "core.editor"
      "emacsclient"))
-(add-hook 'magit-pre-display-buffer-hook 'force-git-wincred)
-(add-hook 'magit-pre-display-buffer-hook 'force-git-emacsclient)
+(add-hook 'magit-pre-display-buffer-hook #'force-git-wincred)
+(add-hook 'magit-pre-display-buffer-hook #'force-git-emacsclient)
 ;; Also swap it so the password prompt is a popup when it's needed
 (setenv "GIT_ASKPASS" "git-gui--askpass")
 ;; Integrate git-gutter into magit (Not confirmed working)
-(add-hook 'git-gutter:update-hooks 'magit-after-revert-hook)
-(add-hook 'git-gutter:update-hooks 'magit-not-reverted-hook)
+(add-hook 'git-gutter:update-hooks #'magit-after-revert-hook)
+(add-hook 'git-gutter:update-hooks #'magit-not-reverted-hook)
 
 
 
@@ -293,7 +293,7 @@
 ;; To bypass this mess, ensure the first `python` on %PATH% can import `jedi` and `epc`.
 ;;  Alternatively, adjust jedi:server-command to target a python that does.
 (require 'jedi)
-(add-hook 'python-mode-hook 'jedi:setup)
+(add-hook 'python-mode-hook #'jedi:setup)
 (setq jedi:complete-on-dot t)
 (define-key jedi-mode-map (kbd "<C-tab>") 'jedi:complete)
 
@@ -333,8 +333,8 @@
   (setq cursor-type (if (or god-local-mode buffer-read-only)
                         'box
                       'bar)))
-(add-hook 'god-mode-enabled-hook 'my-update-cursor)
-(add-hook 'god-mode-disabled-hook 'my-update-cursor)
+(add-hook 'god-mode-enabled-hook #'my-update-cursor)
+(add-hook 'god-mode-disabled-hook #'my-update-cursor)
 
 
 ;; M-x package-install RET multiple-cursors RET
