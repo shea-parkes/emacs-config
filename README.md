@@ -84,6 +84,7 @@ I'm mostly typing these out as a memory exercise.  I'll lead with the handful of
 | `mouse-3` | `imenu` | Give a nice in-place code-navigation menu. |
 | `<ESC>` / `C-z` / `i` | `god-mode` | Enter/exit god-mode (to save my pinkies). |
 | `M-o` | *windows* | Custom binding to `other-window` to allow faster window-cycling.  (Default is `C-x o` as documented below.) |
+| `M-/` | `dabbrev` | Do dumb-style completion by just looking through open buffer. |
 | `<C-tab>` | `jedi-mode` | Force auto-completion to trigger. (Does a pretty good job on its own, this is just the hammer.) |
 | `C-c .`/`C-c ,` | `jedi` | Go-to (come back from) definition of current name. |
 | `C-c g` | `git-gutter` | Force refresh of git-gutter markings (will currently get confused in non-saved state.) |
