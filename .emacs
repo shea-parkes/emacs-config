@@ -335,7 +335,12 @@
                       'bar)))
 (add-hook 'god-mode-enabled-hook #'my-update-cursor)
 (add-hook 'god-mode-disabled-hook #'my-update-cursor)
-
+;; And turn on for isearch
+(require 'god-mode-isearch)
+(define-key isearch-mode-map (kbd "<escape>") 'god-mode-isearch-activate)
+(define-key isearch-mode-map (kbd "C-z") 'god-mode-isearch-activate)
+(define-key god-mode-isearch-map (kbd "<escape>") 'god-mode-isearch-disable)
+(define-key god-mode-isearch-map (kbd "C-z") 'god-mode-isearch-disable)
 
 ;; M-x package-install RET multiple-cursors RET
 (require 'multiple-cursors)
