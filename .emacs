@@ -5,6 +5,12 @@
 ;;;      One with introspection tools such as `pylint` and `jedi`.
 ;;; Code:
 
+
+
+;; ====================
+;; Early Initialization
+;; ====================
+
 ;; Raise the GC threshold while running this init script
 ;;   Having one large pause at the end is better than 40+ medium pauses during launch
 ;;   Restored at the end to interactive levels, but shaves 0.5 seconds off of load
@@ -17,8 +23,17 @@
 (or (server-running-p)
     (server-start))
 
+;; Do not show the welcome screen (drops straight into god-mode now, see below)
+(setq inhibit-startup-message t)
+
 ;; Start the initial frame maximized
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
+
+
+
+;; =========
+;; Low-level
+;; =========
 
 ;; Raise GC thresholds to modern levels (to ~32MB from ~1MB) while in minibuffer
 ;;   Borrowed from here: http://bling.github.io/blog/2016/01/18/why-are-you-changing-gc-cons-threshold/
@@ -31,28 +46,21 @@
 (add-hook 'minibuffer-setup-hook #'my-minibuffer-setup-hook)
 (add-hook 'minibuffer-exit-hook #'my-minibuffer-exit-hook)
 
-;; Remove tempations to utilize the GUI
-(menu-bar-mode -1)
-(tool-bar-mode -1)
 
-;; Do not show the welcome screen (drops straight into god-mode now, see below)
-(setq inhibit-startup-message t)
 
-;; Use a more sane cursor type (adjusted by god-mode below)
-(setq-default cursor-type 'bar)
+;; ========
+;; Movement
+;; ========
 
 ;; React normally when typing with a region active
 (delete-selection-mode 1)
-
-;; Stop beeping when I hit the end of the file
-(setq ring-bell-function 'ignore)
 
 ;; Don't jump by half a screen when scrolling on the boundaries
 (setq scroll-step 1) ;; Scroll one line a time
 (setq scroll-margin 4) ;; Scroll before you hit the actual edge
 
-;; Place a nice code-navigation menu under a right-click menu
-(global-set-key [mouse-3] 'imenu)
+;; Stop beeping when I hit the end of the file
+(setq ring-bell-function 'ignore)
 
 ;; Use the improved buffer menu by default
 ;;   TODO: Come back through and add categories
@@ -64,12 +72,11 @@
 ;; Consider dashes and underscores part of a word in prog-mode
 (add-hook 'prog-mode-hook #'superword-mode)
 
-;; Insert matching parens like a real editor
-(add-hook 'prog-mode-hook #'electric-pair-mode)
-;; And highlight the matching parens
-(add-hook 'prog-mode-hook #'show-paren-mode)
-;; Actually, highlight the whole expression
-(setq show-paren-style 'expression)
+
+
+;; ==========
+;; Navigation
+;; ==========
 
 ;; Activate the bundled `ido` mode
 ;;   Haven't gone to the external `flx-ido` implementation yet
@@ -77,6 +84,22 @@
 (setq ido-enable-flex-matching t)
 (setq ido-separator "\n")
 (ido-mode t)
+
+;; Place a nice code-navigation menu under a right-click menu
+(global-set-key [mouse-3] 'imenu)
+
+
+
+;; ============
+;; Presentation
+;; ============
+
+;; Remove tempations to utilize the GUI
+(menu-bar-mode -1)
+(tool-bar-mode -1)
+
+;; Use a more sane cursor type (adjusted by god-mode below)
+(setq-default cursor-type 'bar)
 
 ;; Activate visible whitespace for code files
 (add-hook 'prog-mode-hook #'whitespace-mode)
@@ -87,17 +110,37 @@
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 ;; Adjust when to flag a line as too-long via font
 (setq whitespace-line-column 100)
+
 ;; Show empty lines at the end of the file while we're at it
 (setq-default indicate-empty-lines t)
 ;; And ensure there is a newline at the end (even though the above does not show it)
 (setq require-final-newline t)
 
-;; Custom function to search Python 3 docs
+;; Insert matching parens like a real editor
+(add-hook 'prog-mode-hook #'electric-pair-mode)
+;; And highlight the matching parens
+(add-hook 'prog-mode-hook #'show-paren-mode)
+;; Actually, highlight the whole expression
+(setq show-paren-style 'expression)
+
+
+
+;; ================
+;; Custom Functions
+;; ================
+
+;; Search Python 3 docs
 (defun python-docs (search_string)
   "Search the official Python 3 documentation"
   (interactive "sSearch Python 3 Docs for: ")
   (browse-url (concat "https://docs.python.org/3/search.html?q=" search_string)))
 (add-hook 'python-mode-hook (lambda ()(local-set-key (kbd "C-c d") 'python-docs)))
+
+
+
+;; ==============
+;; Spell Checking
+;; ==============
 
 ;; Configure spell checking
 ;;   Needs `hunspell` in %PATH%
@@ -123,6 +166,12 @@
 (add-hook 'text-mode-hook (lambda () (flyspell-mode 1)))
 (add-hook 'prog-mode-hook (lambda () (flyspell-prog-mode)))
 
+
+
+;; ===========
+;; Third-party
+;; ===========
+
 ;; Setup where to pull third party packages from
 (require 'package)
 (add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/") t)
@@ -131,16 +180,10 @@
 (package-initialize)
 
 
-;; M-x package-install RET zenburn RET
-(load-theme 'zenburn t)
 
-
-;; M-x package-install RET flycheck RET
-;; Flycheck uses the fringe
-;; Needs `pylint` on your %PATH%
-(require 'flycheck)
-(add-hook 'after-init-hook #'global-flycheck-mode)
-
+;; ===
+;; Git
+;; ===
 
 ;; M-x package-install RET git-gutter RET
 ;; Git-gutter uses the margin by default
@@ -202,16 +245,38 @@
 (add-hook 'git-gutter:update-hooks 'magit-not-reverted-hook)
 
 
-;; M-x package-install RET multiple-cursors RET
-(require 'multiple-cursors)
-(global-set-key (kbd "C->") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+
+;; ============
+;; PRESENTATION
+;; ============
+
+;; M-x package-install RET zenburn RET
+(load-theme 'zenburn t)
 
 
 ;; M-x package-install RET rainbow-delimiters RET
 (require 'rainbow-delimiters)
 ;; Enable for most programming modes
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+
+
+;; M-x package-install RET fill-column-indicator RET
+(require 'fill-column-indicator)
+(add-hook 'prog-mode-hook (lambda () (set-fill-column 100)))
+;; Enable for most programming modes
+(add-hook 'prog-mode-hook #'fci-mode)
+
+
+
+;; =============
+;; Introspection
+;; =============
+
+;; M-x package-install RET flycheck RET
+;; Flycheck uses the fringe
+;; Needs `pylint` on your %PATH%
+(require 'flycheck)
+(add-hook 'after-init-hook #'global-flycheck-mode)
 
 
 ;; M-x package-install RET jedi RET
@@ -228,26 +293,10 @@
 (define-key jedi-mode-map (kbd "<C-tab>") 'jedi:complete)
 
 
-;; M-x package-install RET markdown-mode RET
-(require 'markdown-mode)
-(setq markdown-command "pandoc")
 
-
-;; M-x package-install RET fill-column-indicator RET
-(require 'fill-column-indicator)
-(add-hook 'prog-mode-hook (lambda () (set-fill-column 100)))
-;; Enable for most programming modes
-(add-hook 'prog-mode-hook #'fci-mode)
-
-
-;; M-x package-install RET yaml-mode RET
-(require 'yaml-mode)
-;; Not part of `prog-mode`, so need to re-hook some minor modes
-(add-hook 'yaml-mode-hook #'whitespace-mode)
-(add-hook 'yaml-mode-hook #'show-paren-mode)
-(add-hook 'yaml-mode-hook #'electric-pair-mode)
-(add-hook 'yaml-mode-hook #'superword-mode)
-
+;; =======
+;; Editing
+;; =======
 
 ;; M-x package-install RET god-mode RET
 ;; Only available on MELPA unstable for now
@@ -283,9 +332,10 @@
 (add-hook 'god-mode-disabled-hook 'my-update-cursor)
 
 
-;; M-x package-install RET drag-stuff RET
-(require 'drag-stuff)
-(drag-stuff-global-mode)
+;; M-x package-install RET multiple-cursors RET
+(require 'multiple-cursors)
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 
 
 ;; M-x package-install RET iedit RET
@@ -304,9 +354,38 @@
 (global-set-key (kbd "C-=") 'er/expand-region)
 
 
+;; M-x package-install RET drag-stuff RET
+(require 'drag-stuff)
+(drag-stuff-global-mode)
+
+
+
+;; ==========
+;; File Types
+;; ==========
+
+;; M-x package-install RET markdown-mode RET
+(require 'markdown-mode)
+(setq markdown-command "pandoc")
+
+
+;; M-x package-install RET yaml-mode RET
+(require 'yaml-mode)
+;; Not part of `prog-mode`, so need to re-hook some minor modes
+(add-hook 'yaml-mode-hook #'whitespace-mode)
+(add-hook 'yaml-mode-hook #'show-paren-mode)
+(add-hook 'yaml-mode-hook #'electric-pair-mode)
+(add-hook 'yaml-mode-hook #'superword-mode)
+
+
 ;; M-x package-install RET ess RET
 (require 'ess-site)
 
+
+
+;; =======
+;; Cleanup
+;; =======
 
 ;; Restore the GC threshold to more appropriate levels for interactive use
 (setq gc-cons-threshold 800000)
