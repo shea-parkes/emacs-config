@@ -108,8 +108,8 @@
                                   utf-8)))
 (setq ispell-local-dictionary-alist ispell-dictionary-alist)
 (setq ispell-hunspell-dictionary-alist ispell-dictionary-alist)
-(add-hook 'text-mode-hook (lambda () (flyspell-mode 1)))
-(add-hook 'prog-mode-hook (lambda () (flyspell-prog-mode)))
+(add-hook 'text-mode-hook #'flyspell-mode)
+(add-hook 'prog-mode-hook #'flyspell-prog-mode)
 
 
 
@@ -267,6 +267,11 @@
 (add-hook 'prog-mode-hook #'fci-mode)
 
 
+;; M-x package-install RET highlight-indentation RET
+(require 'highlight-indentation)
+(add-hook 'prog-mode-hook #'highlight-indentation-mode)
+
+
 
 ;; =============
 ;; Introspection
@@ -376,7 +381,8 @@
 (add-hook 'yaml-mode-hook #'show-paren-mode)
 (add-hook 'yaml-mode-hook #'electric-pair-mode)
 (add-hook 'yaml-mode-hook #'superword-mode)
-(add-hook 'yaml-mode-hook (lambda () (flyspell-prog-mode)))
+(add-hook 'yaml-mode-hook #'flyspell-prog-mode)
+(add-hook 'yaml-mode-hook #'highlight-indentation-mode)
 
 
 ;; M-x package-install RET ess RET
