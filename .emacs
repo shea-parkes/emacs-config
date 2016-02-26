@@ -156,6 +156,20 @@
 ;; Place a nice code-navigation menu under a right-click menu
 (global-set-key [mouse-3] 'imenu)
 
+;; Keep track of recent files
+(require 'recentf)
+(recentf-mode 1)
+;; (global-set-key (kbd "C-x C-r") 'recentf-open-files)
+;; Ido integration courtesy of:
+;;   - https://www.masteringemacs.org/article/find-files-faster-recent-files-package
+(defun ido-recentf-open ()
+  "Use `ido-completing-read' to find a recent file."
+  (interactive)
+  (if (find-file (ido-completing-read "Find recent file: " recentf-list))
+      (message "Opening file...")
+    (message "Aborting")))
+(global-set-key (kbd "C-x C-r") 'ido-recentf-open)
+
 
 
 ;; ================
