@@ -170,6 +170,24 @@
 (add-hook 'python-mode-hook (lambda ()(local-set-key (kbd "C-c d") 'python-docs)))
 
 
+;; Open current file externally
+;;   Uses "start" from within Windows shell to leverage Window file associations
+;; Somewhat inspired by:
+;;   - http://batsov.com/articles/2011/11/12/emacs-tip-number-2-open-file-in-external-program/
+;;   - http://stackoverflow.com/questions/4697322/elisp-call-command-on-current-file
+(defun open-with-external ()
+  "Simple function that allows us to open the underlying file of a buffer in an external program."
+  (interactive)
+  (when buffer-file-name
+    (start-process-shell-command
+     "open-with-external"
+     nil
+     (concat "start " buffer-file-name)
+     )))
+(global-set-key (kbd "C-x C-o") 'open-with-external)
+(global-set-key (kbd "C-x o") 'open-with-external)
+
+
 
 ;; ===========
 ;; Third-party
