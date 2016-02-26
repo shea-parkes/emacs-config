@@ -56,6 +56,9 @@
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 
+;; Show the column count
+(column-number-mode)
+
 ;; Use a more sane cursor type (adjusted by god-mode below)
 (setq-default cursor-type 'bar)
 
