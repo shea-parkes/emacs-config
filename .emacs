@@ -132,7 +132,7 @@
 
 ;; Use the improved buffer menu by default
 ;;   TODO: Come back through and add categories
-(global-set-key (kbd "C-x C-b") 'ibuffer)
+;; (global-set-key (kbd "C-x C-b") 'ibuffer)
 
 ;; Make it a bit easier to move around windows
 (global-set-key (kbd "M-o") 'other-window)
@@ -148,10 +148,11 @@
 
 ;; Activate the bundled `ido` mode
 ;;   Haven't gone to the external `flx-ido` implementation yet
-(require 'ido)
-(setq ido-enable-flex-matching t)
-(setq ido-separator "\n")
-(ido-mode t)
+;; (require 'ido)
+;; (setq ido-enable-flex-matching t)
+;; (setq ido-everywhere t)
+;; (setq ido-separator "\n")
+;; (ido-mode t)
 
 ;; Place a nice code-navigation menu under a right-click menu
 (global-set-key [mouse-3] 'imenu)
@@ -444,7 +445,42 @@
 ;; M-x package-install RET ess RET
 (require 'ess-site)
 
+(require 'helm)
+(require 'helm-config)
+(global-set-key (kbd "C-c h") 'helm-command-prefix)
+(global-set-key (kbd "C-c C-h") 'helm-command-prefix)
 
+(define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to run persistent action
+(define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB works in terminal
+(define-key helm-map (kbd "C-z")  'helm-select-action) ; list actions using C-z
+
+(helm-mode 1)
+
+(global-set-key (kbd "M-x") 'helm-M-x)
+(setq helm-M-x-fuzzy-match t) ;; optional fuzzy matching for helm-M-x
+
+(global-set-key (kbd "M-y") 'helm-show-kill-ring)
+
+(global-set-key (kbd "C-x b") 'helm-mini)
+(global-set-key (kbd "C-x C-b") 'helm-mini)
+(setq helm-buffers-fuzzy-matching t
+      helm-recentf-fuzzy-match    t)
+
+(global-set-key (kbd "C-x C-f") 'helm-find-files)
+(global-set-key (kbd "C-x C-r") 'helm-recentf)
+(global-set-key (kbd "C-x <SPC>") 'helm-all-mark-rings)
+(global-set-key (kbd "C-S-s") 'helm-occur)
+(global-set-key (kbd "M-/") 'helm-dabbrev)
+
+
+(require 'helm-ls-git)
+(global-set-key (kbd "C-x C-p") 'helm-browse-project)
+(global-set-key (kbd "C-x p") 'helm-browse-project)
+
+
+;; (require 'projectile)
+;; (projectile-global-mode)
+;; (setq projectile-indexing-method 'alien)
 
 ;; =======
 ;; Cleanup
