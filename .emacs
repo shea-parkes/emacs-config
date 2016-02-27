@@ -132,7 +132,7 @@
 
 ;; Use the improved buffer menu by default
 ;;   TODO: Come back through and add categories
-;; (global-set-key (kbd "C-x C-b") 'ibuffer)
+;; (global-set-key (kbd "C-x C-b") 'ibuffer) ;; Currently disabled in favor of helm (see below)
 
 ;; Make it a bit easier to move around windows
 (global-set-key (kbd "M-o") 'other-window)
@@ -148,7 +148,7 @@
 
 ;; Activate the bundled `ido` mode
 ;;   Haven't gone to the external `flx-ido` implementation yet
-;; (require 'ido)
+;; (require 'ido) ;; Currently disabled in favor of helm (see below)
 ;; (setq ido-enable-flex-matching t)
 ;; (setq ido-everywhere t)
 ;; (setq ido-separator "\n")
@@ -169,7 +169,7 @@
   (if (find-file (ido-completing-read "Find recent file: " recentf-list))
       (message "Opening file...")
     (message "Aborting")))
-(global-set-key (kbd "C-x C-r") 'ido-recentf-open)
+;; (global-set-key (kbd "C-x C-r") 'ido-recentf-open) ;; Currently disabled in favor of helm (see below)
 
 
 
@@ -387,6 +387,7 @@
 (define-key god-mode-isearch-map (kbd "<escape>") 'god-mode-isearch-disable)
 (define-key god-mode-isearch-map (kbd "C-z") 'god-mode-isearch-disable)
 
+
 ;; M-x package-install RET multiple-cursors RET
 (require 'multiple-cursors)
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
@@ -402,6 +403,8 @@
   (interactive)
   (iedit-mode -1))
 (define-key iedit-mode-keymap (kbd "RET") 'quit-iedit-mode)
+;; Need to locally re-define a default that avy steals globally below
+(define-key iedit-mode-keymap (kbd "C-'") 'iedit-toggle-unmatched-lines-visible)
 
 
 ;; M-x package-install RET expand-region RET
