@@ -109,7 +109,7 @@ I'm mostly typing these out as a memory exercise.  I'll lead with the handful of
 | `M-;` | `prog-mode` | Add/remove comments (DWIM style). |
 | `C-c C-z` | `python-mode` | Switch to Python interpreter (prompt to launch if needed). |
 | `C-c C-r` | `python-mode` | Send region to Python interpreter. |
-| `C-c C-c` | `python-mode` | Send buffer to Python interpreter (automatically excludes `if __name__ == '__main__':` sections. |
+| `C-c C-c` | `python-mode` | Send buffer to Python interpreter (automatically excludes `if __name__ == '__main__':` sections.) |
 | `C-M-h` | `python-mode` | Select the `defun` |
 | `C-M-a`/`C-M-e` | `python-mode` | Move to the beginning/end of the `defun` |
 | `C-c d` | `python-mode` | Search the official Python 3 documentation. |
@@ -121,7 +121,7 @@ I'm mostly typing these out as a memory exercise.  I'll lead with the handful of
 | `C-y` / `M-y` | *kill/yank* | "Paste" from the kill ring (i.e. "clipboard"); then cycle through the kill ring with subsequent calls to `M-y`. |
 | `C-w`/`M-w` | *kill/yank* | "Cut" or "Copy" the selected region. |
 | `C-k` | *kill/yank* | Kill to the end of the line. |
-| `M-f`/`M-b`/`M-k`/`M-DEL` | *kill/yank* | Move/kill by word. |
+| `M-f`/`M-b`/`M-d`/`M-DEL` | *kill/yank* | Move/kill by word. |
 | `M-up` / `M-down` | `drag-stuff` | Move a line/region up/down. |
 | `M-left` / `M-right` | `drag-stuff` | Move a word left/right. |
 | `M-=` | *region* | Count characters in the current region. |
