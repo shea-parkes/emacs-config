@@ -36,7 +36,9 @@ The two challenges are:
 Succinctly:
   * Use a code snippet at the top of `.emacs` to ensure the Emacs server is running (already present in this `.emacs`)
   * Make `%ALTERNATE_EDITOR%` and point it to `runemacs.exe` (or always pass `--alternate-editor` to `emacsclientw.exe`)
+    * *This is what executes if a server is not already running.*
   * Make `%EMACS_SERVER_FILE%` and point it to `~\emacs.d\server\server` (This file will only exist while an Emacs server is running) (or always pass `--server-file` to `emacsclientw.exe`)
+    * *This is the breadcrumb file Emacs uses to determine if a server is running (and how to connect to said server).*
   * Make appropriate registry entries (mostly calling `emacsclientw.exe -n %1`, or a pass-thru batch script that sets up the environment first)
 
 The server should still nicely shut down when the client is closed.  However, sometimes this will go haywire and the server indicator file (`~\emacs.d\server\server`) will be left behind after the server dies.  If that happens, subsequent launches will complain about failing to make a connection.  Just go and delete the server indicator file manually and the problem should go away.
@@ -118,7 +120,7 @@ I'm mostly typing these out as a memory exercise.  I'll lead with the handful of
 | `M-=` | *region* | Count characters in the current region. |
 | `M-g g` | *cursor* | Goto a specific line. |
 | `M-r` | *cursor* | Cycle cursor between top/middle/bottom of active buffer. |
-| `mouse-2` | *spelling* | Show suggested words (note: this is a middle click) |
+| `mouse-2` | *flyspell* | Show suggested words (note: this is a middle click) |
 | `M-%` | *replace* | Go into a find/replace dialogue.  Can then do `y`/`n`/`!` to replace one/skip one/replace all.  Other keys available. |
 | `M-l` / `M-u` / `M-c` | *case conversion* | Convert the next word to lower-/upper-/proper- case. |
 | `C-x C-l` / `C-x C-u` | *case conversion* | Convert the region to lower-/upper- case. |
