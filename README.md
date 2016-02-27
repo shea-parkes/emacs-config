@@ -70,6 +70,10 @@ Periodic profiling can be helpful.  The Emacs Start Up Profiler package is very 
 
 Emacs has two "gutter" areas. The `fringe` is the inner one and the `margin` is the outer one.  Various packages/modes try to take advantage of these areas, but in general only one can use a given area at once.  I try to note which package/mode is using which area in notes in the config file.
 
+### Usage of Helm
+
+[Helm](https://github.com/emacs-helm/helm) can be quite a pervasive package.  I'm currently trying it out and have most of its functionality enabled.  This basically means a chunk of the info below is at least a bit off due to helm taking over things.  In particular, I currently have helm over-riding `iSearch` and taking the place of `IDO` everywhere.  In most cases, helm is taking over and providing a similar functionality.  If that is ever not the case I will try to document below.
+
 ### Keyboard Shortcuts
 
 I'm mostly typing these out as a memory exercise.  I'll lead with the handful of custom ones and then only toss on the standard ones I want to remind myself of.
@@ -85,6 +89,9 @@ I'm mostly typing these out as a memory exercise.  I'll lead with the handful of
 | `C-'` / `C-"` | `avy` | Start avy jump process on word/2-chars.  (Works in iSearch as well.) |
 | `mouse-3` | `imenu` | Give a nice in-place code-navigation menu. |
 | `<ESC>` / `C-z` / `i` | `god-mode` | Enter/exit god-mode (to save my pinkies). |
+| `C-x p` | `helm` | Open up a project view (only works when visiting a buffer tied to a git repository). |
+| `M-y` | `helm` | Open up a helm view of the kill-ring. |
+| `C-x <SPC>` | `helm` | Open up a helm view of the mark-ring. |
 | `M-o` | *windows* | Custom binding to `other-window` to allow faster window-cycling.  (Default is `C-x o` as documented below.) |
 | `M-/` | `dabbrev` | Do dumb-style completion by just looking through open buffer. |
 | `<C-tab>` | `jedi-mode` | Force auto-completion to trigger. (Does a pretty good job on its own, this is just the hammer.) |
