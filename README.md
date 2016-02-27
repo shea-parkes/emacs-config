@@ -36,7 +36,9 @@ The two challenges are:
 Succinctly:
   * Use a code snippet at the top of `.emacs` to ensure the Emacs server is running (already present in this `.emacs`)
   * Make `%ALTERNATE_EDITOR%` and point it to `runemacs.exe` (or always pass `--alternate-editor` to `emacsclientw.exe`)
+    * *This is what executes if a server is not already running.*
   * Make `%EMACS_SERVER_FILE%` and point it to `~\emacs.d\server\server` (This file will only exist while an Emacs server is running) (or always pass `--server-file` to `emacsclientw.exe`)
+    * *This is the breadcrumb file Emacs uses to determine if a server is running (and how to connect to said server).*
   * Make appropriate registry entries (mostly calling `emacsclientw.exe -n %1`, or a pass-thru batch script that sets up the environment first)
 
 The server should still nicely shut down when the client is closed.  However, sometimes this will go haywire and the server indicator file (`~\emacs.d\server\server`) will be left behind after the server dies.  If that happens, subsequent launches will complain about failing to make a connection.  Just go and delete the server indicator file manually and the problem should go away.
@@ -68,6 +70,10 @@ Periodic profiling can be helpful.  The Emacs Start Up Profiler package is very 
 
 Emacs has two "gutter" areas. The `fringe` is the inner one and the `margin` is the outer one.  Various packages/modes try to take advantage of these areas, but in general only one can use a given area at once.  I try to note which package/mode is using which area in notes in the config file.
 
+### Usage of Helm
+
+[Helm](https://github.com/emacs-helm/helm) can be quite a pervasive package.  I'm currently trying it out and have most of its functionality enabled.  This basically means a chunk of the info below is at least a bit off due to helm taking over things.  In particular, I currently have helm over-riding `iSearch` and taking the place of `IDO` everywhere.  In most cases, helm is taking over and providing a similar functionality.  If that is ever not the case I will try to document below.
+
 ### Keyboard Shortcuts
 
 I'm mostly typing these out as a memory exercise.  I'll lead with the handful of custom ones and then only toss on the standard ones I want to remind myself of.
@@ -83,6 +89,9 @@ I'm mostly typing these out as a memory exercise.  I'll lead with the handful of
 | `C-'` / `C-"` | `avy` | Start avy jump process on word/2-chars.  (Works in iSearch as well.) |
 | `mouse-3` | `imenu` | Give a nice in-place code-navigation menu. |
 | `<ESC>` / `C-z` / `i` | `god-mode` | Enter/exit god-mode (to save my pinkies). |
+| `C-x p` | `helm` | Open up a project view (only works when visiting a buffer tied to a git repository). |
+| `M-y` | `helm` | Open up a helm view of the kill-ring. |
+| `C-x <SPC>` | `helm` | Open up a helm view of the mark-ring. |
 | `M-o` | *windows* | Custom binding to `other-window` to allow faster window-cycling.  (Default is `C-x o` as documented below.) |
 | `M-/` | `dabbrev` | Do dumb-style completion by just looking through open buffer. |
 | `<C-tab>` | `jedi-mode` | Force auto-completion to trigger. (Does a pretty good job on its own, this is just the hammer.) |
@@ -118,7 +127,7 @@ I'm mostly typing these out as a memory exercise.  I'll lead with the handful of
 | `M-=` | *region* | Count characters in the current region. |
 | `M-g g` | *cursor* | Goto a specific line. |
 | `M-r` | *cursor* | Cycle cursor between top/middle/bottom of active buffer. |
-| `mouse-2` | *spelling* | Show suggested words (note: this is a middle click) |
+| `mouse-2` | *flyspell* | Show suggested words (note: this is a middle click) |
 | `M-%` | *replace* | Go into a find/replace dialogue.  Can then do `y`/`n`/`!` to replace one/skip one/replace all.  Other keys available. |
 | `M-l` / `M-u` / `M-c` | *case conversion* | Convert the next word to lower-/upper-/proper- case. |
 | `C-x C-l` / `C-x C-u` | *case conversion* | Convert the region to lower-/upper- case. |
