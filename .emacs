@@ -420,11 +420,19 @@
 
 
 ;; M-x package-install RET helm-ls-git RET
+;;   - Temporarily pulled from Melpa unstable to get grep fix
 (require 'helm-ls-git)
 ;; Works as long as the buffer is in a repo
 (global-set-key (kbd "C-x C-p") 'helm-browse-project)
 (global-set-key (kbd "C-x p") 'helm-browse-project)
 (setq helm-ls-git-fuzzy-match t)
+;; Default git grep is to search current file
+;;   This sets the default to prepend the C-u C-u that triggers project root recursive search
+(defun helm-ls-git-run-grep-root()
+  (interactive)
+  (let ((current-prefix-arg '(16)))
+    (call-interactively 'helm-ls-git-run-grep)))
+(define-key helm-ls-git-map (kbd "C-s") 'helm-ls-git-run-grep-root)
 
 
 

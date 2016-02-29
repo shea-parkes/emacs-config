@@ -90,6 +90,7 @@ I'm mostly typing these out as a memory exercise.  I'll lead with the handful of
 | `mouse-3` | `imenu` | Give a nice in-place code-navigation menu. |
 | `<ESC>` / `C-z` / `i` | `god-mode` | Enter/exit god-mode (to save my pinkies). |
 | `C-x p` | `helm` | Open up a project view (only works when visiting a buffer tied to a git repository). |
+| `C-s` | `helm-ls-git` | Grep a project (only from the project helm buffer). |
 | `M-y` | `helm` | Open up a helm view of the kill-ring. |
 | `C-x <SPC>` | `helm` | Open up a helm view of the mark-ring. |
 | `M-o` | *windows* | Custom binding to `other-window` to allow faster window-cycling.  (Default is `C-x o` as documented below.) |
