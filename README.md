@@ -91,6 +91,7 @@ I'm mostly typing these out as a memory exercise.  I'll lead with the handful of
 | `<ESC>` / `C-z` / `i` | `god-mode` | Enter/exit god-mode (to save my pinkies). |
 | `C-x p` | `helm` | Open up a project view (only works when visiting a buffer tied to a git repository). |
 | `C-s` | `helm-ls-git` | Grep a project (only from the project helm menu, and only if not on a buffer listing). |
+| `C-x C-d` | `helm-ls-git` | Open a `helm-ls-git` buffer from another helm buffer (e.g. `helm-find-file` buffer). |
 | `C-o` | `helm` | Cycle through option sections (e.g. `{buffers, recentf}` in `helm-mini`). |
 | `C-c o` | `helm` | Open current item in another window. |
 | `M-y` | `helm` | Open up a helm view of the kill-ring. |
