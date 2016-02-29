@@ -427,10 +427,10 @@
 (global-set-key (kbd "C-x p") 'helm-browse-project)
 (setq helm-ls-git-fuzzy-match t)
 ;; Default git grep is to search current file
-;;   This sets the default to prepend the C-u C-u that triggers project root recursive search
+;;   This sets the default to prepend the C-u that triggers project root recursive search
 (defun helm-ls-git-run-grep-root()
   (interactive)
-  (let ((current-prefix-arg '(16)))
+  (let ((current-prefix-arg '(4)))
     (call-interactively 'helm-ls-git-run-grep)))
 (define-key helm-ls-git-map (kbd "C-s") 'helm-ls-git-run-grep-root)
 
