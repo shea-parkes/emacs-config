@@ -59,6 +59,9 @@
 ;; Make sure we want to quit
 (setq confirm-kill-emacs 'y-or-n-p)
 
+;; Make all yes/no questions much simpler
+(fset 'yes-or-no-p 'y-or-n-p)
+
 ;; Show the column count
 (column-number-mode)
 
