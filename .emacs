@@ -56,6 +56,9 @@
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 
+;; Make sure we want to quit
+(setq confirm-kill-emacs 'y-or-n-p)
+
 ;; Show the column count
 (column-number-mode)
 
