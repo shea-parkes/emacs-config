@@ -89,6 +89,7 @@ I'm mostly typing these out as a memory exercise.  I'll lead with the handful of
 | `C-'` / `C-"` | `avy` | Start avy jump process on word/2-chars.  (Works in iSearch as well.) |
 | `mouse-3` | `imenu` | Give a nice in-place code-navigation menu. |
 | `<ESC>` / `C-z` / `i` | `god-mode` | Enter/exit god-mode (to save my pinkies). |
+| `C-x C-h` | `helm` | Custom mapping for general helm prefix.  Not really needed since I've given most entry points their own binding. |
 | `C-x p` | `helm-ls-git` | Open up a project view (only works when visiting a buffer tied to a git repository). |
 | `C-s` | `helm-ls-git` | Grep a project (only from the project helm menu, and only if not on a buffer listing). |
 | `C-x C-d` | `helm-ls-git` | Open a `helm-ls-git` buffer from another helm buffer (e.g. `helm-find-file` buffer). |
