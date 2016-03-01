@@ -426,6 +426,8 @@
 (global-set-key (kbd "C-x C-p") 'helm-browse-project)
 (global-set-key (kbd "C-x p") 'helm-browse-project)
 (setq helm-ls-git-fuzzy-match t)
+;; Convert git grep quoting to double quotes to work on `cmd.exe`
+(setq helm-ls-git-format-glob-string "\"%s\"")
 ;; Default git grep is to search current file
 ;;   This sets the default to prepend the C-u that triggers project root recursive search
 (defun helm-ls-git-run-grep-root()
