@@ -393,8 +393,11 @@
 ;; Most of this configuration came from the default Helm suggestions
 (require 'helm)
 (require 'helm-config)
-(global-set-key (kbd "C-c h") 'helm-command-prefix)
-(global-set-key (kbd "C-c C-h") 'helm-command-prefix)
+;; Instead of the suggested prefix swap, I'm going to use the valuable `C-c h` for helm-resume
+;; (global-set-key (kbd "C-c h") 'helm-command-prefix)
+;; (global-set-key (kbd "C-c C-h") 'helm-command-prefix)
+(global-set-key (kbd "C-c h") 'helm-resume)
+(global-set-key (kbd "C-c C-h") 'helm-resume)
 
 (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to run persistent action
 (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB works in terminal
