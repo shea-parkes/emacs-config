@@ -434,11 +434,15 @@
 (global-set-key (kbd "M-/") 'helm-dabbrev)
 
 ;; Make helm-occur follow along as you go
+(helm-occur-init-source)
 (add-hook 'helm-before-initialize-hook
           (lambda () (helm-attrset 'follow 1 helm-source-occur)))
 
 ;; Make helm-grep follow along as you go
 ;;   helm-ls-git-run-grep utilizes helm-source-grep so this plays nicely together
+;;   Requires a stupid initialization of helm-source-grep
+;;     It gets constantly rebuilt, so as long as we init it as a "source" we're fine
+(setq helm-source-grep (helm-build-dummy-source "init_grep" :follow 1))
 (add-hook 'helm-before-initialize-hook
           (lambda () (helm-attrset 'follow 1 helm-source-grep)))
 
