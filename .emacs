@@ -406,6 +406,10 @@
 ;; Most of this configuration came from the default Helm suggestions
 (require 'helm)
 (require 'helm-config)
+
+;; Make helm stay inside of active window
+;; (setq helm-split-window-in-side-p t)
+
 ;; (global-set-key (kbd "C-x h") 'helm-command-prefix) ;; Leave this alone as "select all"
 (global-set-key (kbd "C-x C-h") 'helm-command-prefix)
 (global-set-key (kbd "C-c h") 'helm-resume)
