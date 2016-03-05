@@ -433,6 +433,15 @@
 (global-set-key (kbd "C-s") 'helm-occur)
 (global-set-key (kbd "M-/") 'helm-dabbrev)
 
+;; Make helm-occur follow along as you go
+(add-hook 'helm-before-initialize-hook
+          (lambda () (helm-attrset 'follow 1 helm-source-occur)))
+
+;; Make helm-grep follow along as you go
+;;   helm-ls-git-run-grep utilizes helm-source-grep so this plays nicely together
+(add-hook 'helm-before-initialize-hook
+          (lambda () (helm-attrset 'follow 1 helm-source-grep)))
+
 
 ;; M-x package-install RET helm-ls-git RET
 ;;   - Temporarily pulled from Melpa unstable to get grep fix
