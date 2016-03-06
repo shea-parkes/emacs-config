@@ -80,6 +80,10 @@ I'm mostly typing these out as a memory exercise.  I'll lead with the handful of
 
 | Shortcut | ~Mode | Description |
 | :------- | :---- | :---------- |
+| `M-o` | *windows* | Custom binding to `other-window` to allow faster window-cycling.  (Default is `C-x o` as documented below.) |
+| `mouse-3` | `imenu` | Give a nice in-place code-navigation menu. |
+| `C-x o` | `open-with` | Open current file with associated external file. |
+| `<ESC>` / `C-z` / `i` | `god-mode` | Enter/exit god-mode (to save my pinkies). |
 | `C->`/`C-<` | `multiple-cursors` | Add another cursor at the next/previous: {matching region if a selection is active; row if a selection is not active} |
 | `C-;` | `iedit-mode` | Enter/exit iedit mode. |
 | `M-0 C-;` | `iedit-mode` | Enter iedit mode, but only within the current defun. |
@@ -87,8 +91,6 @@ I'm mostly typing these out as a memory exercise.  I'll lead with the handful of
 | `Tab` / `Shift-Tab` | `iedit-mode` | Cycle through the matching selections. |
 | `C-=` / `M-- C-=` | `expand-region` | Iteratively expand/contract active region to word/section/function/etc. |
 | `C-'` / `C-"` | `avy` | Start avy jump process on word/2-chars.  (Works in iSearch as well.) |
-| `mouse-3` | `imenu` | Give a nice in-place code-navigation menu. |
-| `<ESC>` / `C-z` / `i` | `god-mode` | Enter/exit god-mode (to save my pinkies). |
 | `C-x C-h` | `helm` | Custom mapping for general helm prefix.  Not really needed since I've given most entry points their own binding. |
 | `C-x p` | `helm-ls-git` | Open up a project view (only works when visiting a buffer tied to a git repository). |
 | `C-s` | `helm-ls-git` | Grep a project (only from the project helm menu, and only if not on a buffer listing). |
@@ -98,7 +100,6 @@ I'm mostly typing these out as a memory exercise.  I'll lead with the handful of
 | `M-y` | `helm` | Open up a helm view of the kill-ring. |
 | `C-x <SPC>` | `helm` | Open up a helm view of the mark-ring. |
 | `C-c h` | `helm` | Return to the last helm buffer. |
-| `M-o` | *windows* | Custom binding to `other-window` to allow faster window-cycling.  (Default is `C-x o` as documented below.) |
 | `M-/` | `dabbrev` | Do dumb-style completion by just looking through open buffer. |
 | `<C-tab>` | `jedi-mode` | Force auto-completion to trigger. (Does a pretty good job on its own, this is just the hammer.) |
 | `C-c .`/`C-c ,` | `jedi` | Go-to (come back from) definition of current name. |
