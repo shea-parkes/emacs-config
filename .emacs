@@ -443,6 +443,21 @@
 (global-set-key (kbd "C-s") 'helm-occur)
 (global-set-key (kbd "M-/") 'helm-dabbrev)
 
+;; Make imenu available as well
+(global-set-key (kbd "C-c m") 'helm-imenu)
+(global-set-key (kbd "C-c C-m") 'helm-imenu)
+(setq helm-imenu-fuzzy-match t)
+
+;; Make helm-imenu follow along as you go
+;;   Have to short-circuit initialization of helm-source-imenu
+(require 'helm-imenu)
+(setq helm-source-imenu
+          (helm-make-source "Imenu" 'helm-imenu-source
+            :fuzzy-match helm-imenu-fuzzy-match
+            ))
+(add-hook 'helm-before-initialize-hook
+          (lambda () (helm-attrset 'follow 1 helm-source-imenu)))
+
 ;; Make helm-occur follow along as you go
 (helm-occur-init-source)
 (add-hook 'helm-before-initialize-hook
@@ -450,7 +465,7 @@
 
 ;; Make helm-grep follow along as you go
 ;;   helm-ls-git-run-grep utilizes helm-source-grep so this plays nicely together
-;;   Requires a stupid initialization of helm-source-grep
+;;   Requires a short-circuit initialization of helm-source-grep
 ;;     It gets constantly rebuilt, so as long as we init it as a "source" we're fine
 (setq helm-source-grep (helm-build-dummy-source "init_grep" :follow 1))
 (add-hook 'helm-before-initialize-hook

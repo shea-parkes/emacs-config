@@ -97,10 +97,12 @@ I'm mostly typing these out as a memory exercise.  I'll lead with the handful of
 | `C-s` | `helm-ls-git` | Grep a project (only from the project helm menu, and only if not on a buffer listing). |
 | `C-x C-d` | `helm-ls-git` | Open a `helm-ls-git` buffer from another helm buffer (e.g. `helm-find-file` buffer). |
 | `C-o` | `helm` | Cycle through option sections (e.g. `{buffers, recentf}` in `helm-mini`). |
+| `C-<Up>` / `C-<Down>` | `helm` | Force following of selection even if `follow-mode` is off. |
 | `C-c o` | `helm` | Open current item in other window. |
 | `M-y` | `helm` | Open up a helm view of the kill-ring. |
 | `C-x <SPC>` | `helm` | Open up a helm view of the mark-ring. |
 | `C-c h` | `helm` | Return to the last helm buffer. |
+| `C-c m` | `helm` | Open up helm view of `imenu`. |
 | `M-/` | `dabbrev` | Do dumb-style completion by just looking through open buffer. |
 | `<C-tab>` | `jedi-mode` | Force auto-completion to trigger. (Does a pretty good job on its own, this is just the hammer.) |
 | `C-c .`/`C-c ,` | `jedi-mode` | Go-to (come back from) definition of current name. |
