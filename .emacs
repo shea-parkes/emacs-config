@@ -354,6 +354,12 @@
 (add-hook 'python-mode-hook #'jedi:setup)
 (setq jedi:complete-on-dot t)
 (define-key jedi-mode-map (kbd "<C-tab>") 'jedi:complete)
+;; Enable alternative `M-.` and `'M-,` bindings
+(setq jedi:use-shortcuts t)
+;; Helpful re-bindings to go along with god-mode below
+(define-key jedi-mode-map (kbd "C-c C-.") 'jedi:goto-definition)
+(define-key jedi-mode-map (kbd "C-c C-,") 'jedi:goto-definition-pop-marker)
+(define-key jedi-mode-map (kbd "C-c C-?") 'jedi:show-doc)
 
 
 

@@ -103,7 +103,9 @@ I'm mostly typing these out as a memory exercise.  I'll lead with the handful of
 | `C-c h` | `helm` | Return to the last helm buffer. |
 | `M-/` | `dabbrev` | Do dumb-style completion by just looking through open buffer. |
 | `<C-tab>` | `jedi-mode` | Force auto-completion to trigger. (Does a pretty good job on its own, this is just the hammer.) |
-| `C-c .`/`C-c ,` | `jedi` | Go-to (come back from) definition of current name. |
+| `C-c .`/`C-c ,` | `jedi-mode` | Go-to (come back from) definition of current name. |
+| `M-.` / `M-,` | `jedi-mode` | Same as above (alternative bindings). |
+| `C-c ?` | `jedi-mode` | Show ~doc-string. |
 | `C-c g` | `git-gutter` | Force refresh of git-gutter markings (will currently get confused in non-saved state.) |
 | `C-x g` | `magit` | Spawn the root magit buffer that deals with the repository. |
 | `C-x M-g` | `magit` | Spawn the main magit dispatch menu. (Would normally come here from menu above via `?` if desired). |
