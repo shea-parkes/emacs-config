@@ -92,6 +92,10 @@ I'm mostly typing these out as a memory exercise.  I'll lead with the handful of
 | `M-;` | `iedit-mode` | De-select (/re-select) the current match. |
 | `C-=` / `M-- C-=` | `expand-region` | Iteratively expand/contract active region to word/section/function/etc. |
 | `C-'` / `C-"` | `avy` | Start avy jump process on word/2-chars.  (Works in iSearch as well.) |
+| `C-/` / `C-?` | `undo-tree` | Undo (/redo) a change. |
+| `C-x u` / `C-x /` | `undo-tree` | Go into a visual tree representation of changes. |
+| `n p f b` / `<arrows>` | `undo-tree-visualize` | Move around the tree view. |
+| `t` | `undo-tree-visualize` | Turn on time-stamps in the tree view. |
 | `C-x C-h` | `helm` | Custom mapping for general helm prefix.  Not really needed since I've given most entry points their own binding. |
 | `C-x p` | `helm-ls-git` | Open up a project view (only works when visiting a buffer tied to a git repository). |
 | `C-s` | `helm-ls-git` | Grep a project (only from the project helm menu, and only if not on a buffer listing). |

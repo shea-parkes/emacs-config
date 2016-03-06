@@ -503,6 +503,14 @@
 ;; Editing
 ;; =======
 
+;; M-x package-install RET undo-tree
+(require 'undo-tree)
+(global-undo-tree-mode)
+(global-set-key (kbd "C-x C-u") 'undo-tree-visualize)
+(global-set-key (kbd "C-x /") 'undo-tree-visualize)
+(global-set-key (kbd "C-x C-/") 'undo-tree-visualize)
+
+
 ;; M-x package-install RET multiple-cursors RET
 (require 'multiple-cursors)
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
