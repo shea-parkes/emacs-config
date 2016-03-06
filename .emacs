@@ -576,5 +576,28 @@
 ;; Cleanup
 ;; =======
 
+;; M-x package-install RET diminish RET
+;; Use diminish to keep our status bar clean
+;; Have to diminish via hooks since most modes are enabled via hooks
+;;   Be sure to append these hooks so they run last
+(require 'diminish)
+(add-hook 'prog-mode-hook (lambda () (diminish 'superword-mode)) t)
+(add-hook 'yaml-mode-hook (lambda () (diminish 'superword-mode)) t)
+(add-hook 'prog-mode-hook (lambda () (diminish 'whitespace-mode)) t)
+(add-hook 'yaml-mode-hook (lambda () (diminish 'whitespace-mode)) t)
+(add-hook 'text-mode-hook (lambda () (diminish 'flyspell-mode)) t)
+(add-hook 'prog-mode-hook (lambda () (diminish 'flyspell-mode)) t) ;; squashes flyspell-prog-mode
+(add-hook 'yaml-mode-hook (lambda () (diminish 'flyspell-mode)) t) ;; squashes flyspell-prog-mode
+(add-hook 'python-mode-hook (lambda () (diminish 'auto-complete-mode)) t)
+(diminish 'drag-stuff-mode)
+(diminish 'undo-tree-mode)
+(diminish 'helm-mode)
+(diminish 'god-mode)
+(diminish 'god-local-mode)
+(add-hook 'prog-mode-hook (lambda () (diminish 'highlight-indentation-mode)) t)
+(add-hook 'yaml-mode-hook (lambda () (diminish 'highlight-indentation-mode)) t)
+(diminish 'git-gutter-mode)
+
+
 ;; Restore the GC threshold to more appropriate levels for interactive use
 (setq gc-cons-threshold 800000)
