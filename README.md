@@ -89,6 +89,7 @@ I'm mostly typing these out as a memory exercise.  I'll lead with the handful of
 | `M-0 C-;` | `iedit-mode` | Enter iedit mode, but only within the current defun. |
 | `C-'` | `iedit-mode` | While in iedit-mode, limit display to matched lines. (Toggle) |
 | `Tab` / `Shift-Tab` | `iedit-mode` | Cycle through the matching selections. |
+| `M-;` | `iedit-mode` | De-select (/re-select) the current match. |
 | `C-=` / `M-- C-=` | `expand-region` | Iteratively expand/contract active region to word/section/function/etc. |
 | `C-'` / `C-"` | `avy` | Start avy jump process on word/2-chars.  (Works in iSearch as well.) |
 | `C-x C-h` | `helm` | Custom mapping for general helm prefix.  Not really needed since I've given most entry points their own binding. |
