@@ -212,8 +212,8 @@
      nil
      (concat "start " buffer-file-name)
      )))
-(global-set-key (kbd "C-x C-o") 'open-with-external)
-(global-set-key (kbd "C-x o") 'open-with-external)
+(global-set-key (kbd "C-c C-o") 'open-with-external)
+(global-set-key (kbd "C-c o") 'open-with-external)
 
 
 

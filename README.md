@@ -82,7 +82,7 @@ I'm mostly typing these out as a memory exercise.  I'll lead with the handful of
 | :------- | :---- | :---------- |
 | `M-o` | *windows* | Custom binding to `other-window` to allow faster window-cycling.  (Default is `C-x o` as documented below.) |
 | `mouse-3` | `imenu` | Give a nice in-place code-navigation menu. |
-| `C-x o` | `open-with` | Open current file with associated external file. |
+| `C-c o` | `open-with` | Open current file with associated external file. |
 | `<ESC>` / `C-z` / `i` | `god-mode` | Enter/exit god-mode (to save my pinkies). |
 | `C->`/`C-<` | `multiple-cursors` | Add another cursor at the next/previous: {matching region if a selection is active; row if a selection is not active} |
 | `C-;` | `iedit-mode` | Enter/exit iedit mode. |
