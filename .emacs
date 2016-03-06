@@ -245,6 +245,14 @@
 ;; Give a keybinding to force refresh (it gets confused)
 (global-set-key (kbd "C-c g") 'git-gutter)
 
+;; Some custom keybindings to work at the hunk level
+(global-set-key (kbd "C-c n") 'git-gutter:next-hunk)
+(global-set-key (kbd "C-c C-n") 'git-gutter:next-hunk)
+(global-set-key (kbd "C-c p") 'git-gutter:previous-hunk)
+(global-set-key (kbd "C-c C-p") 'git-gutter:previous-hunk)
+(global-set-key (kbd "C-c r") 'git-gutter:revert-hunk)
+(global-set-key (kbd "C-c C-r") 'git-gutter:revert-hunk)
+
 
 ;; Possible alternative to git-gutter, it's a mixed bag
 ;; M-x package-install RET diff-hl RET

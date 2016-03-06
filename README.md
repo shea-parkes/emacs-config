@@ -109,6 +109,8 @@ I'm mostly typing these out as a memory exercise.  I'll lead with the handful of
 | `M-.` / `M-,` | `jedi-mode` | Same as above (alternative bindings). |
 | `C-c ?` | `jedi-mode` | Show ~doc-string. |
 | `C-c g` | `git-gutter` | Force refresh of git-gutter markings (will currently get confused in non-saved state.) |
+| `C-c n` / `C-c p` | `git-gutter` | Next (/ previous) hunk of changes. |
+| `C-c r` | `git-gutter` | Revert current hunk of changes. |
 | `C-x g` | `magit` | Spawn the root magit buffer that deals with the repository. |
 | `C-x M-g` | `magit` | Spawn the main magit dispatch menu. (Would normally come here from menu above via `?` if desired). |
 | `C-c M-g` | `magit` | Spawn magit menu for **this file**. (Nice for `blame` or contextual `log`.) |
