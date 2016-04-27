@@ -320,6 +320,8 @@ you should place your code here."
     (add-hook 'magit-pre-display-buffer-hook #'force-git-wincred)
     (add-hook 'magit-pre-display-buffer-hook #'force-git-emacsclient)
     )
+  ;; Also swap it so the password prompt is a popup when it's needed
+  (setenv "GIT_ASKPASS" "git-gui--askpass")
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
