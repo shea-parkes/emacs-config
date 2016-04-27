@@ -292,6 +292,34 @@ you should place your code here."
 
   ;; Make word movements respect '_' in Python
   (add-hook 'python-mode-hook #'(lambda () (modify-syntax-entry ?_ "w")))
+
+  ;; While using magit, it's most convenient to use Windows credential storage
+  ;;   GitHub Desktop doesn't like that setting and will continuously remove it
+  ;;   The function and hook below continuously applies it when using magit
+  (defun force-git-wincred ()
+    "Force Git to use wincred again"
+    (start-process
+     "force-git-wincred"
+     nil
+     "git"
+     "config"
+     "--global"
+     "credential.helper"
+     "wincred"))
+  (defun force-git-emacsclient ()
+    "Force Git to use emacsclient again"
+    (start-process
+     "force-git-emacsclient"
+     nil
+     "git"
+     "config"
+     "--global"
+     "core.editor"
+     "emacsclient"))
+  (with-eval-after-load 'magit
+    (add-hook 'magit-pre-display-buffer-hook #'force-git-wincred)
+    (add-hook 'magit-pre-display-buffer-hook #'force-git-emacsclient)
+    )
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
