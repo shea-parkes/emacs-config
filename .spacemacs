@@ -334,6 +334,8 @@ you should place your code here."
     (interactive "sSearch Python 3 Docs for: ")
     (browse-url (concat "https://docs.python.org/3/search.html?q=" search_string)))
   (spacemacs/set-leader-keys-for-major-mode 'python-mode "S" 'search-python-docs)
+
+  (spacemacs/set-leader-keys "sm" 'helm-imenu)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
