@@ -265,8 +265,10 @@ you should place your code here."
                       )
    require-final-newline t
    )
-  (add-hook 'prog-mode-hook 'whitespace-mode)
-  (add-hook 'yaml-mode-hook 'whitespace-mode)
+  (add-hook 'prog-mode-hook 'spacemacs/toggle-whitespace-on)
+  (add-hook 'yaml-mode-hook 'spacemacs/toggle-whitespace-on)
+
+  (add-hook 'prog-mode-hook 'spacemacs/toggle-fill-column-indicator-on)
 
   (setq
    ispell-program-name "hunspell"
