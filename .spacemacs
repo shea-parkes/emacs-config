@@ -35,7 +35,10 @@ values."
      spell-checking
      syntax-checking
      version-control
-     python
+     (python :variables
+             python-fill-column 100
+             python-test-runner 'pytest
+             )
      yaml
      salt
      )
@@ -322,6 +325,13 @@ you should place your code here."
     )
   ;; Also swap it so the password prompt is a popup when it's needed
   (setenv "GIT_ASKPASS" "git-gui--askpass")
+
+  ;; Search Python 3 docs
+  (defun search-python-docs (search_string)
+    "Search the official Python 3 documentation"
+    (interactive "sSearch Python 3 Docs for: ")
+    (browse-url (concat "https://docs.python.org/3/search.html?q=" search_string)))
+  (spacemacs/set-leader-keys-for-major-mode 'python-mode "S" 'search-python-docs)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
