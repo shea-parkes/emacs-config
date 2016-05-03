@@ -296,6 +296,8 @@ you should place your code here."
      )
     )
 
+  (setq markdown-command "pandoc")
+
   ;; Make word movements respect '_' in Python
   (add-hook 'python-mode-hook #'(lambda () (modify-syntax-entry ?_ "w")))
 
