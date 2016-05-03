@@ -82,6 +82,7 @@ I'm mostly typing these out as a memory exercise.  I'll lead with the handful of
 | `SPC s m` | `helm` | Open up helm view of `imenu`. |
 | `SPC m S` | `python-mode` | Search the official Python 3 documentation. |
 | `C-c o` | `helm` | Open current item in other window. |
+| `C-c C-f` | `helm` | Enable follow-mode. |
 | `C-c C-c` / `C-c C-k` | `magit` | Finish (/cancel) a commit message. |
 | `M-!` / `M-&` | *shells* | Run a single system command (/asynchronously) |
 | `M-x shell` / `M-x eshell` | *shells* | Run a system shell (/elisp-faked-bash shell). |
