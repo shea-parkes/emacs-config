@@ -1,3 +1,7 @@
+# DEPRECIATED
+
+**This document covers my original explorations into a hand-rolled Emacs configuration.  There was a lot of great learning in this endeavor, but I have since switched to [Spacemacs](http://spacemacs.org).  It provided a very solid set of sane defaults, the ability to smoothly extend it, and a community to keep it current and updated.  See the [main readme](readme.md) for details of the configuration of Spacemacs.**
+
 ## Background
 
 I'm drawn to emacs due to its lightweight nature, and good Python REPL integration.  It also appears that there is still a robust package development community, with 1-2 active implementations of each of the important add-ons (e.g. linters, code completers).  I work dominantly on Windows, but the majority of the emacs ecosystem seems to support that just fine.  I anticipate using emacs mostly for python development in the immediate future, so much of this repository will be focused on that.
