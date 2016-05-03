@@ -86,6 +86,7 @@ I'm mostly typing these out as a memory exercise.  I'll lead with the handful of
 | `C-c o` | `helm` | Open current item in other window. |
 | `C-c C-f` | `helm` | Enable follow-mode. |
 | `C-c C-c` / `C-c C-k` | `magit` | Finish (/cancel) a commit message. |
+| `mouse-2` | `flyspell` | Show spell correction candidates. |
 | `M-!` / `M-&` | *shells* | Run a single system command (/asynchronously) |
 | `M-x shell` / `M-x eshell` | *shells* | Run a system shell (/elisp-faked-bash shell). |
 | `ls > #<buffer my_buf>` | *shells* | Redirect StdOut to a new buffer (`eshell` only). |
