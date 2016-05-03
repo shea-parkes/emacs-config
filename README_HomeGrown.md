@@ -1,6 +1,6 @@
 # DEPRECIATED
 
-**This document covers my original explorations into a hand-rolled Emacs configuration.  There was a lot of great learning in this endeavor, but I have since switched to [Spacemacs](http://spacemacs.org).  It provided a very solid set of sane defaults, the ability to smoothly extend it, and a community to keep it current and updated.  See the [main readme](readme.md) for details of the configuration of Spacemacs.**
+**This document covers my original explorations into a hand-rolled Emacs configuration.  There was a lot of great learning in this endeavor, but I have since switched to [Spacemacs](http://spacemacs.org).  It provided a very solid set of sane defaults, the ability to smoothly extend it, and a community to keep it current and updated.  See the [main readme](README.md) for details of the configuration of Spacemacs.**
 
 ## Background
 

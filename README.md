@@ -1,6 +1,6 @@
 ## Background
 
-I'm drawn to emacs due to its lightweight nature, and good Python REPL integration.  I originally rolled my own emacs; you can read about that adventure in the [depreciated readme](readme_homegrown.md).  I have since shifted to building on top of [Spacemacs](http://spacemacs.org).  It provides an excellent base that is always up to date and easy to extend.
+I'm drawn to emacs due to its lightweight nature, and good Python REPL integration.  I originally rolled my own emacs; you can read about that adventure in the [depreciated readme](README_HomeGrown.md).  I have since shifted to building on top of [Spacemacs](http://spacemacs.org).  It provides an excellent base that is always up to date and easy to extend.
 
 ## This Repo
 
