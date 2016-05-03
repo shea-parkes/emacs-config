@@ -64,6 +64,8 @@ The following applications should be downloaded and available on your `%PATH%`:
     - Might need to adjust the embedded CA listing for intranet authorities
   - `hunspell.exe` (likely from ezwinports)
   - `pandoc.exe`
+  - `pt.exe` (the platinum searcher)
+    - Very optional, but a nice performance gain.
 
 ### Profiling startup
 
