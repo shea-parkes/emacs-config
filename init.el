@@ -270,6 +270,8 @@ you should place your code here."
   (add-hook 'yaml-mode-hook 'spacemacs/toggle-whitespace-on)
 
   (add-hook 'prog-mode-hook 'spacemacs/toggle-fill-column-indicator-on)
+  (add-hook 'prog-mode-hook 'spacemacs/toggle-highlight-indentation-on)
+  (add-hook 'prog-mode-hook 'spacemacs/toggle-indent-guide-on)
 
   (setq
    ispell-program-name "hunspell"
