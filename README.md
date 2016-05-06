@@ -99,6 +99,7 @@ I'm mostly typing these out as a memory exercise.  I'll lead with the handful of
 | `V` | `iedit` | Toggle visibility to just matches. |
 | `n` `N` | `iedit` | Move between matches. |
 | `SPC v` | `expand-region` | Enter into `expand-region` mode. |
+| `SPC a u` | `undo-tree` | Visualize the undo tree. |
 
 And some brief vim-centric reminders:
   - Word movements: `w` `W` `e` `E` `b` `B` `ge` `gE`
