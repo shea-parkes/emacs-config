@@ -118,6 +118,7 @@ And some brief vim-centric reminders:
 Search mess:
   - *Inline*: `f` `F` `t` `T` `;` `,` (Spacemacs alters `,` to be major-mode leader key)
   - *Everywhere*: `/` `?` `n` `N`
+  - *Current Word*: `*` `#` (Can then jump to `iedit`)
 
 And text objects (my personal favorites).  To be used with `a` or `i` after an operator.  Spacemacs (and `vim-surround`) also provide `s` (`S`) to just operate on the surrounding tidbits.
 
