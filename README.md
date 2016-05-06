@@ -117,6 +117,7 @@ And some brief vim-centric reminders:
 | `gu` | Lowercase |
 | `gU` | Uppercase |
 | `<` `>` | (Un-) Indent |
+| `SPC ;` | Comment (Not Vim) |
 
 Search mess:
   - *Inline*: `f` `F` `t` `T` `;` `,` (Spacemacs alters `,` to be major-mode leader key)
