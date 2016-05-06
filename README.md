@@ -91,3 +91,42 @@ I'm mostly typing these out as a memory exercise.  I'll lead with the handful of
 | `ls > #<buffer my_buf>` | *shells* | Redirect StdOut to a new buffer (`eshell` only). |
 | `<F11>` | *frames* | Go totally full screen. |
 | `s` / `d` / `x` | *buffers-list* | Mark a buffer for later saving/deleting. Then execute out marks. |
+| `C-f` / `C-b` | `vim` | Scroll by ~half pages. |
+| `SPC x J` / `SPC x K` | `spacemacs` | Move line(s). |
+| `SPC s e` | `iedit` | Enter special iedit mode. |
+| `TAB` | `iedit` | Toggle current occurence. |
+| `F` | `iedit` | Restrict scope to the function. |
+| `V` | `iedit` | Toggle visibility to just matches. |
+| `n` `N` | `iedit` | Move between matches. |
+
+And some brief vim-centric reminders:
+  - Word movements: `w` `W` `e` `E` `b` `B` `ge` `gE`
+  - ~Single-character commands: `x` `r`
+  - While in Insert mode, `C-o` lets you do a single Normal mode command
+  - `.` - Repeat last command; highly useful
+
+| Key | Vim Operator |
+| :-- | :----------- |
+| `c` | Change |
+| `d` | Delete (cut) |
+| `y` | Yank (copy) |
+| `gu` | Lowercase |
+| `gU` | Uppercase |
+| `<` `>` | (Un-) Indent |
+
+Search mess:
+  - *Inline*: `f` `F` `t` `T` `;` `,` (Spacemacs alters `,` to be major-mode leader key)
+  - *Everywhere*: `/` `?` `n` `N`
+
+And text objects (my personal favorites).  To be used with `a` or `i` after an operator.  Spacemacs (and `vim-surround`) also provide `s` (`S`) to just operate on the surrounding tidbits.
+
+| Key | Base Vim | Text Object |
+| :-- | :------- | :---------- |
+| `w` | `True` | A word. |
+| `s` | `True` | A sentance. |
+| `p` | `True` | A paragraph. |
+| `(` `[` etc | `True` | Grab based on enclosing characters. |
+| `'` `"` etc | `True` | String literals. |
+| `t` | `True` | HTML tags. |
+| `i` | `False` | Indentation block.  `aI` reaches down. |
+| `a` | `False` | Function argument. |
