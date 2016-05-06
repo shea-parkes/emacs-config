@@ -93,11 +93,12 @@ I'm mostly typing these out as a memory exercise.  I'll lead with the handful of
 | `s` / `d` / `x` | *buffers-list* | Mark a buffer for later saving/deleting. Then execute out marks. |
 | `C-f` / `C-b` | `vim` | Scroll by ~half pages. |
 | `SPC x J` / `SPC x K` | `spacemacs` | Move line(s). |
-| `SPC s e` | `iedit` | Enter special iedit mode. |
+| `SPC s e` | `iedit` | Enter special iedit mode. (Or `e` from `expand-region`) |
 | `TAB` | `iedit` | Toggle current occurence. |
 | `F` | `iedit` | Restrict scope to the function. |
 | `V` | `iedit` | Toggle visibility to just matches. |
 | `n` `N` | `iedit` | Move between matches. |
+| `SPC v` | `expand-region` | Enter into `expand-region` mode. |
 
 And some brief vim-centric reminders:
   - Word movements: `w` `W` `e` `E` `b` `B` `ge` `gE`
