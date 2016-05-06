@@ -107,6 +107,7 @@ And some brief vim-centric reminders:
   - While in Insert mode, `C-o` lets you do a single Normal mode command
   - `.` - Repeat last command; highly useful
   - `""` is the default register.  `"+` is the system clipboard. `"0` is the last yank.
+  - `SPC n +`/`SPC n -` to increment/decrement a number (Vim uses `C-a` `C-x`)
 
 | Key | Vim Operator |
 | :-- | :----------- |
