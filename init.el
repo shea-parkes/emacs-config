@@ -303,6 +303,10 @@ you should place your code here."
   ;; Make word movements respect '_' in Python
   (add-hook 'python-mode-hook #'(lambda () (modify-syntax-entry ?_ "w")))
 
+  ;; Go with the built-in electric-pair-mode for Python
+  (add-hook 'python-mode-hook 'spacemacs/toggle-smartparens-off)
+  (add-hook 'python-mode-hook 'electric-pair-mode)
+
   ;; While using magit, it's most convenient to use Windows credential storage
   ;;   GitHub Desktop doesn't like that setting and will continuously remove it
   ;;   The function and hook below continuously applies it when using magit
