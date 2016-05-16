@@ -273,10 +273,6 @@ you should place your code here."
   (add-hook 'prog-mode-hook 'spacemacs/toggle-highlight-indentation-on)
   (add-hook 'prog-mode-hook 'spacemacs/toggle-indent-guide-on)
 
-  (semantic-mode 1)
-  (spacemacs/toggle-semantic-stickyfunc-globally-on)
-  (global-semantic-highlight-func-mode)
-
   (setq
    ispell-program-name "hunspell"
    ispell-really-hunspell t
