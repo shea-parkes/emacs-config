@@ -333,6 +333,7 @@ you should place your code here."
   (with-eval-after-load 'magit
     (add-hook 'magit-pre-display-buffer-hook #'force-git-wincred)
     (add-hook 'magit-pre-display-buffer-hook #'force-git-emacsclient)
+    (setq magit-fetch-arguments (quote ("--prune")))
     )
   ;; Also swap it so the password prompt is a popup when it's needed
   (setenv "GIT_ASKPASS" "git-gui--askpass")
@@ -347,9 +348,6 @@ you should place your code here."
   ;; Bind anaconda jump back
   (spacemacs/set-leader-keys-for-major-mode 'python-mode "gb" 'anaconda-mode-go-back)
 
-  (with-eval-after-load 'magit
-    (setq magit-fetch-arguments (quote ("--prune")))
-    )
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
