@@ -127,7 +127,7 @@ And text objects (my personal favorites).  To be used with `a` or `i` after an o
 | Key | Base Vim | Text Object |
 | :-- | :------- | :---------- |
 | `w` | `True` | A word. |
-| `s` | `True` | A sentance. |
+| `s` | `True` | A sentence. |
 | `p` | `True` | A paragraph. |
 | `(` `[` etc | `True` | Grab based on enclosing characters. |
 | `'` `"` etc | `True` | String literals. |
