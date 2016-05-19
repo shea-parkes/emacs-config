@@ -125,7 +125,7 @@ Search mess:
   - *Everywhere*: `/` `?` `n` `N`
   - *Current Word*: `*` `#` (Can then jump to `iedit`)
 
-And text objects (my personal favorites).  To be used with `a` or `i` after an operator.  Spacemacs (and `vim-surround`) also provide `s` (`S`) to just operate on the surrounding tidbits.
+And text objects (my personal favorites).  To be used with `a` or `i` after an operator.  Spacemacs (and `vim-surround`) also provide `s` (`S`) to just operate on the surrounding tidbits. If you are not ~inside a given text object, the action will operate on the next corresponding object on the line.
 
 | Key | Base Vim | Text Object |
 | :-- | :------- | :---------- |
