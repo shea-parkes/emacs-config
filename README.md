@@ -110,6 +110,7 @@ And some brief vim-centric reminders:
   - `""` is the default register.  `"+` is the system clipboard. `"0` is the last yank.
     - Prefix commands (e.g. yank/paste) to manually specify a registry.
   - `SPC n +`/`SPC n -` to increment/decrement a number (Vim uses `C-a` `C-x`)
+  - Set a mark with an `m` prefix.  Jump back to it with a back-tick prefix.
 
 | Key | Vim Operator |
 | :-- | :----------- |
