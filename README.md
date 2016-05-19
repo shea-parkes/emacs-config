@@ -111,6 +111,7 @@ And some brief vim-centric reminders:
     - Prefix commands (e.g. yank/paste) to manually specify a registry.
   - `SPC n +`/`SPC n -` to increment/decrement a number (Vim uses `C-a` `C-x`)
   - Set a mark with an `m` prefix.  Jump back to it with a back-tick prefix.
+  - Use `%` to jump between enclosure ends
 
 | Key | Vim Operator |
 | :-- | :----------- |
@@ -142,6 +143,7 @@ Search mess:
   - *Inline*: `f` `F` `t` `T` `;` `,` (Spacemacs alters `,` to be major-mode leader key)
   - *Everywhere*: `/` `?` `n` `N`
   - *Current Word*: `*` `#` (Can then jump to `iedit`)
+  - *Replace*: `:%s/old/new/g` to actually hit all occurrences on all lines.  Can add `c` suffix to interactively confirm each hit.
 
 Visual mode mess:
   - The goal is largely to avoid this with text objects (saves time and is semantically cleaner)
