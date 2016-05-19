@@ -52,7 +52,7 @@ The server should still nicely shut down when the client is closed.  However, so
 
 #### Assisting Python environment
 
-This configuration depends upon having a helpful python environment at the front of your `%PATH%` when launching emacs.  This environment should contain any code introspection tools used in packages below (e.g. `pylint` and `jedi`).  `jedi` in particular would likely benefit from this python environment being very similar to the environment you would actually execute code in (i.e. contain packages such as `sqlalchemy` if you're going to use them in your code).  `emacs-jedi` also wants the `epc` package installed in this environment.
+This configuration depends upon having a helpful python environment at the front of your `%PATH%` when launching emacs.  This environment should contain any code introspection tools used in packages below (e.g. `pylint` and `jedi`).  `jedi` in particular would likely benefit from this python environment being very similar to the environment you would actually execute code in (i.e. contain packages such as `sqlalchemy` if you're going to use them in your code).  `emacs-jedi` also wants the `epc` package installed in this environment.  The Emacs anaconda package (not to be confused with the Anaconda python distribution) also wants a couple other packages installed; read its current documentation at the time of install.
 
 Be sure to also include the `/Scripts` folder of the environment in your `%PATH%` (most tools like `conda` would already do this).
 
