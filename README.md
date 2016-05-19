@@ -120,9 +120,9 @@ And some brief vim-centric reminders:
 | `gU` | Uppercase |
 | `<` `>` | (Un-) Indent |
 | `SPC ;` | Comment (Not Vim) |
-| `ya` | Add enclosure (Not Vim) |
+| `ys` | Add enclosure (Not Vim) |
 
-And text objects (my personal favorites).  To be used with `a` or `i` after an operator.  Spacemacs (and `vim-surround`) also provide `s` (`S`) to just operate on the surrounding tidbits. If you are not ~inside a given text object, the action will operate on the next corresponding object on the line.
+And text objects (my personal favorites).  To be used with `a` or `i` after an operator.  Spacemacs (and `vim-surround`) also provide `s` (`S`) to just operate on the surrounding tidbits. If you are not ~inside a given text object, the action will operate on the next corresponding object on the line (for most objects).
 
 | Key | Base Vim | Text Object |
 | :-- | :------- | :---------- |
@@ -132,10 +132,25 @@ And text objects (my personal favorites).  To be used with `a` or `i` after an o
 | `(` `[` etc | `True` | Grab based on enclosing characters. |
 | `'` `"` etc | `True` | String literals. |
 | `t` | `True` | HTML tags. |
-| `i` | `False` | Indentation block.  `aI` reaches down. |
+| `i` | `False` | Indentation block. |
+| `I` | `False` | Indentation block plus line above. |
+| `J` | `False` | Indentation block plus line above and below. |
 | `a` | `False` | Function argument. |
 
 Search mess:
   - *Inline*: `f` `F` `t` `T` `;` `,` (Spacemacs alters `,` to be major-mode leader key)
   - *Everywhere*: `/` `?` `n` `N`
   - *Current Word*: `*` `#` (Can then jump to `iedit`)
+
+Visual mode mess:
+  - The goal is largely to avoid this with text objects (saves time and is semantically cleaner)
+  - Can be useful to learn the motions and text objects however (visualize what you think you're going to act on)
+  - Once in visual mode can use motions or text objects to make selections, then operator to make effect.
+
+| Key | Effect |
+| :-- | :----- |
+| `v` | Enter visual mode. |
+| `V` | Enter visual line mode. |
+| `C-v` | Enter visual block mode. |
+| `o` | Jump cursor to other end of selection. |
+| `I`/`A` | Insert before/after the selection(s). |
