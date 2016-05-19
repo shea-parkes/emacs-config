@@ -105,8 +105,10 @@ And some brief vim-centric reminders:
   - Word movements: `w` `W` `e` `E` `b` `B` `ge` `gE`
   - ~Single-character commands: `x` `r`
   - While in Insert mode, `C-o` lets you do a single Normal mode command
+  - Also in Insert mode, `C-w` will delete a word and `C-r` will paste (need to tell it which register)
   - `.` - Repeat last command; highly useful
   - `""` is the default register.  `"+` is the system clipboard. `"0` is the last yank.
+    - Prefix commands (e.g. yank/paste) to manually specify a registry.
   - `SPC n +`/`SPC n -` to increment/decrement a number (Vim uses `C-a` `C-x`)
 
 | Key | Vim Operator |
@@ -120,11 +122,6 @@ And some brief vim-centric reminders:
 | `SPC ;` | Comment (Not Vim) |
 | `ya` | Add enclosure (Not Vim) |
 
-Search mess:
-  - *Inline*: `f` `F` `t` `T` `;` `,` (Spacemacs alters `,` to be major-mode leader key)
-  - *Everywhere*: `/` `?` `n` `N`
-  - *Current Word*: `*` `#` (Can then jump to `iedit`)
-
 And text objects (my personal favorites).  To be used with `a` or `i` after an operator.  Spacemacs (and `vim-surround`) also provide `s` (`S`) to just operate on the surrounding tidbits. If you are not ~inside a given text object, the action will operate on the next corresponding object on the line.
 
 | Key | Base Vim | Text Object |
@@ -137,3 +134,8 @@ And text objects (my personal favorites).  To be used with `a` or `i` after an o
 | `t` | `True` | HTML tags. |
 | `i` | `False` | Indentation block.  `aI` reaches down. |
 | `a` | `False` | Function argument. |
+
+Search mess:
+  - *Inline*: `f` `F` `t` `T` `;` `,` (Spacemacs alters `,` to be major-mode leader key)
+  - *Everywhere*: `/` `?` `n` `N`
+  - *Current Word*: `*` `#` (Can then jump to `iedit`)
