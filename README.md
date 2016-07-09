@@ -89,7 +89,7 @@ I'm mostly typing these out as a memory exercise.  I'll lead with the handful of
 | `M-!` / `M-&` | *shells* | Run a single system command (/asynchronously) |
 | `M-x shell` / `M-x eshell` | *shells* | Run a system shell (/elisp-faked-bash shell). |
 | `ls > #<buffer my_buf>` | *shells* | Redirect StdOut to a new buffer (`eshell` only). |
-| `<F11>` | *frames* | Go totally full screen. |
+| `SPC T F` | *frames* | Go totally full screen. |
 | `s` / `d` / `x` | *buffers-list* | Mark a buffer for later saving/deleting. Then execute out marks. |
 | `C-f` / `C-b` | `vim` | Scroll by ~half pages. |
 | `SPC x J` / `SPC x K` | `spacemacs` | Move line(s). |
