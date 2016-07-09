@@ -111,6 +111,7 @@ And some brief vim-centric reminders:
     - Prefix commands (e.g. yank/paste) to manually specify a registry.
   - `SPC n +`/`SPC n -` to increment/decrement a number (Vim uses `C-a` `C-x`)
   - Set a mark with an `m` prefix.  Jump to it with a back-tick prefix.
+    - Capital letter marks are "global" across buffers.
     - Back-tick + period jumps to last edit.  Double back-tick jumps "back" (~undoes a jump).
   - Use `%` to jump between enclosure ends
 
