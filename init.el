@@ -392,9 +392,6 @@ you should place your code here."
     (browse-url (concat "https://docs.python.org/3/search.html?q=" search_string)))
   (spacemacs/set-leader-keys-for-major-mode 'python-mode "S" 'search-python-docs)
 
-  ;; Bind anaconda jump back
-  (spacemacs/set-leader-keys-for-major-mode 'python-mode "gb" 'anaconda-mode-go-back)
-
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
