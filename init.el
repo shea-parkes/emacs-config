@@ -53,6 +53,7 @@ values."
              python-test-runner 'pytest
              )
      windows-scripts
+     csv
      yaml
      salt
      ess
