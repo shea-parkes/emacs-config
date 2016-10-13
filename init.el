@@ -52,6 +52,7 @@ values."
              python-fill-column 100
              python-test-runner 'pytest
              )
+     windows-scripts
      yaml
      salt
      ess
