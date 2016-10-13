@@ -367,19 +367,19 @@ you should place your code here."
      "--global"
      "credential.helper"
      "wincred"))
-  (defun force-git-emacsclient ()
-    "Force Git to use emacsclient again"
+  (defun force-git-cli-editor ()
+    "Force Git to use CLI editor of my choice"
     (start-process
-     "force-git-emacsclient"
+     "force-git-cli-editor"
      nil
      "git"
      "config"
      "--global"
      "core.editor"
-     "emacsclient"))
+     "vim"))
   (with-eval-after-load 'magit
     (add-hook 'magit-pre-display-buffer-hook #'force-git-wincred)
-    (add-hook 'magit-pre-display-buffer-hook #'force-git-emacsclient)
+    (add-hook 'magit-pre-display-buffer-hook #'force-git-cli-editor)
     (setq magit-fetch-arguments (quote ("--prune")))
     )
   ;; Also swap it so the password prompt is a popup when it's needed
