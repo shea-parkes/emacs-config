@@ -12,7 +12,21 @@ I'm closely following the Spacemacs documentation; my main configuration file is
 
 ### Setting up a new rig
 
-I'm currently planning on using the 64-bit windows builds of Emacs available on sourceforge, but I am quite leary of that host.  They're basically "portable" apps, so they can be tossed anywhere and optionally added to the `%PATH%`.
+I've shifted to utilizing the excellent [msys2](http://msys2.github.io/) project to source my binaries.  A few things to remember:
+  - We want to install the `mingw` versions of components if possible; this way they work better in a standard ~`cmd.exe`.
+  - Even thought we want the `mingw` versions, it's advised to run `pacman` from the `MSYS2 MSYS` environment.
+  - The pre-compiled packages are not always available (or updated), so sometimes you have to build them youself from the recipies in the main [MINGW-Packages repository](https://github.com/Alexpux/MINGW-packages).
+  - The following folders then need added to `%PATH%`:
+    - `C:\msys64\mingw\bin`
+    - `C:\msys64\usr\bin`
+
+On a new machine, I would generally recommend installing the following packages:
+  - `git`
+  - `mingw-w64-x86_64-tk` (*for gitk*)
+  - `mingw-w64-x86_64-emacs`
+  - `mingw-w64-x86_64-ag`
+  - `mingw-w64-x86_64-hunspell`
+  - `mingw-w64-x86_64-hunspell-en`
 
 `emacs.exe` is the main emacs executable, but you would generally use `runemacs.exe` to launch it so it will release any ~console used to launch it.
 
