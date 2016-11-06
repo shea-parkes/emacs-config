@@ -12,7 +12,13 @@ I'm closely following the Spacemacs documentation; my main configuration file is
 
 ### Setting up a new rig
 
-I'm currently planning on using the 64-bit windows builds of Emacs available on sourceforge, but I am quite leary of that host.  They're basically "portable" apps, so they can be tossed anywhere and optionally added to the `%PATH%`.
+I'm currently using [Chocolatey](https://chocolatey.org/) to handle installing emacs and some optional dependencies.  It does require admin rights, so if you don't have those available, it's mostly possible to chase down the sources of the packages below and manually download them and add them to your `%PATH%` (it's just more of a PITA).  The following packages will provide a reasonable emacs environment:
+  - `emacs64`
+  - `hunspell.portable`
+  - `pt`
+  - `pandoc`
+  - `sourcecodepro` (*will always require admin rights*)
+  - `git -params '"/GitAndUnixToolsOnPath"'` (*if not handled elsewhere*)
 
 `emacs.exe` is the main emacs executable, but you would generally use `runemacs.exe` to launch it so it will release any ~console used to launch it.
 
@@ -55,17 +61,6 @@ The server should still nicely shut down when the client is closed.  However, so
 This configuration depends upon having a helpful python environment at the front of your `%PATH%` when launching emacs.  This environment should contain any code introspection tools used in packages below (e.g. `pylint` and `jedi`).  `jedi` in particular would likely benefit from this python environment being very similar to the environment you would actually execute code in (i.e. contain packages such as `sqlalchemy` if you're going to use them in your code).  `emacs-jedi` also wants the `epc` package installed in this environment.  The Emacs anaconda package (not to be confused with the Anaconda python distribution) also wants a couple other packages installed; read its current documentation at the time of install.
 
 Be sure to also include the `/Scripts` folder of the environment in your `%PATH%` (most tools like `conda` would already do this).
-
-### Other package adjustments
-
-The following applications should be downloaded and available on your `%PATH%`:
-  - `git.exe` (likely from PortableGit)
-    - Including the `usr/bin` subfolder of PortableGit as well to get `diff.exe`
-    - Might need to adjust the embedded CA listing for intranet authorities
-  - `hunspell.exe` (likely from ezwinports)
-  - `pandoc.exe`
-  - `pt.exe` (the platinum searcher)
-    - Very optional, but a nice performance gain.
 
 ### Profiling startup
 
