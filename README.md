@@ -16,7 +16,7 @@ I'm currently using [Chocolatey](https://chocolatey.org/) to handle installing e
   - `emacs64`
   - `hunspell.portable`
   - `pt`
-  - `pandoc`
+  - `pandoc --ia=ALLUSERS=1` (*option required to land on PATH for all users*)
   - `sourcecodepro` (*will always require admin rights*)
   - `git -params '"/GitAndUnixToolsOnPath"'` (*if not handled elsewhere*)
 
