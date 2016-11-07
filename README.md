@@ -35,6 +35,7 @@ As an alternative to Chocolatey, there is the very nice [msys2](http://msys2.git
   - The following folders then need added to `%PATH%`:
     - `C:\msys64\mingw\bin`
     - `C:\msys64\usr\bin`
+  - If you're using `MSYS2`, you likely won't be able to use `Source Code Pro`, so likely switch default font to `Conolas`.
 
 On a new machine, I would generally recommend installing the following packages:
   - `git` (*if needed*)
