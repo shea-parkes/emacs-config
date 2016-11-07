@@ -12,21 +12,39 @@ I'm closely following the Spacemacs documentation; my main configuration file is
 
 ### Setting up a new rig
 
-I've shifted to utilizing the excellent [msys2](http://msys2.github.io/) project to source my binaries.  A few things to remember:
+#### [Chocolatey](https://chocolatey.org/)
+
+I'm currently using [Chocolatey](https://chocolatey.org/) to handle installing emacs and some optional dependencies.  It does require admin rights, so if you don't have those available consider `MSYS2` below, or chase down the Chocolatey sources (most of the packages below are "portable").  The following Chocolatey packages will provide a reasonable emacs environment:
+  - `emacs64`
+  - `hunspell.portable`
+  - `pt`
+  - `pandoc --ia=ALLUSERS=1` (*option required to land on PATH for all users*)
+  - `sourcecodepro` (*will always require admin rights*)
+  - `git -params '"/GitAndUnixToolsOnPath"'` (*if not handled elsewhere*)
+
+Other useful packages:
+  - `putty.portable`
+  -  `rapidee`
+
+#### [MSYS2](http://msys2.github.io/)
+
+As an alternative to Chocolatey, there is the very nice [msys2](http://msys2.github.io/) project.  In fact, most of the Chocolatey packages above are built with `MSYS2` itself.  However, `MSYS2` binary packages aren't updated very often (so you'll have to compile them yourself) and you can't really snag an older version of a package.  A few other things to remember:
   - We want to install the `mingw` versions of components if possible; this way they work better in a standard ~`cmd.exe`.
-  - Even thought we want the `mingw` versions, it's advised to run `pacman` from the `MSYS2 MSYS` environment.
-  - The pre-compiled packages are not always available (or updated), so sometimes you have to build them youself from the recipies in the main [MINGW-Packages repository](https://github.com/Alexpux/MINGW-packages).
+  - Even though we want the `mingw` versions, it's advised to run `pacman` from the `MSYS2 MSYS` environment.
+  - The pre-compiled packages are not always available (or updated), so sometimes you have to build them yourself from the recipes in the main [MINGW-Packages repository](https://github.com/Alexpux/MINGW-packages).
   - The following folders then need added to `%PATH%`:
     - `C:\msys64\mingw\bin`
     - `C:\msys64\usr\bin`
 
 On a new machine, I would generally recommend installing the following packages:
-  - `git`
+  - `git` (*if needed*)
   - `mingw-w64-x86_64-tk` (*for gitk*)
   - `mingw-w64-x86_64-emacs`
   - `mingw-w64-x86_64-ag`
   - `mingw-w64-x86_64-hunspell`
   - `mingw-w64-x86_64-hunspell-en`
+
+#### Other Misc (e.g. Environmental Variables)
 
 `emacs.exe` is the main emacs executable, but you would generally use `runemacs.exe` to launch it so it will release any ~console used to launch it.
 
@@ -63,23 +81,13 @@ The server should still nicely shut down when the client is closed.  However, so
   * Setting `core.editor = emacsclient` to allow Emacs integration with command line `git` usage
     * Still only works if an emacs server is already running (see above)
 	* `magit` takes over the commit message editing (i.e. `C-c C-c` / `C-c C-k` work like below)
+    * I've since done the sacrilige of just setting `core.editor = vim` so I don't have to leave the command line (terminal emacs is not impressive on Windows)
 
 #### Assisting Python environment
 
 This configuration depends upon having a helpful python environment at the front of your `%PATH%` when launching emacs.  This environment should contain any code introspection tools used in packages below (e.g. `pylint` and `jedi`).  `jedi` in particular would likely benefit from this python environment being very similar to the environment you would actually execute code in (i.e. contain packages such as `sqlalchemy` if you're going to use them in your code).  `emacs-jedi` also wants the `epc` package installed in this environment.  The Emacs anaconda package (not to be confused with the Anaconda python distribution) also wants a couple other packages installed; read its current documentation at the time of install.
 
 Be sure to also include the `/Scripts` folder of the environment in your `%PATH%` (most tools like `conda` would already do this).
-
-### Other package adjustments
-
-The following applications should be downloaded and available on your `%PATH%`:
-  - `git.exe` (likely from PortableGit)
-    - Including the `usr/bin` subfolder of PortableGit as well to get `diff.exe`
-    - Might need to adjust the embedded CA listing for intranet authorities
-  - `hunspell.exe` (likely from ezwinports)
-  - `pandoc.exe`
-  - `pt.exe` (the platinum searcher)
-    - Very optional, but a nice performance gain.
 
 ### Profiling startup
 
