@@ -12,13 +12,40 @@ I'm closely following the Spacemacs documentation; my main configuration file is
 
 ### Setting up a new rig
 
-I'm currently using [Chocolatey](https://chocolatey.org/) to handle installing emacs and some optional dependencies.  It does require admin rights, so if you don't have those available, it's mostly possible to chase down the sources of the packages below and manually download them and add them to your `%PATH%` (it's just more of a PITA).  The following packages will provide a reasonable emacs environment:
+#### [Chocolatey](https://chocolatey.org/)
+
+I'm currently using [Chocolatey](https://chocolatey.org/) to handle installing emacs and some optional dependencies.  It does require admin rights, so if you don't have those available consider `MSYS2` below, or chase down the Chocolatey sources (most of the packages below are "portable").  The following Chocolatey packages will provide a reasonable emacs environment:
   - `emacs64`
   - `hunspell.portable`
   - `pt`
   - `pandoc --ia=ALLUSERS=1` (*option required to land on PATH for all users*)
   - `sourcecodepro` (*will always require admin rights*)
   - `git -params '"/GitAndUnixToolsOnPath"'` (*if not handled elsewhere*)
+
+Other useful packages:
+  - `putty.portable`
+  -  `rapidee`
+
+#### [MSYS2](http://msys2.github.io/)
+
+As an alternative to Chocolatey, there is the very nice [msys2](http://msys2.github.io/) project.  In fact, most of the Chocolatey packages above are built with `MSYS2` itself.  However, `MSYS2` binary packages aren't updated very often (so you'll have to compile them yourself) and you can't really snag an older version of a package.  A few other things to remember:
+  - We want to install the `mingw` versions of components if possible; this way they work better in a standard ~`cmd.exe`.
+  - Even though we want the `mingw` versions, it's advised to run `pacman` from the `MSYS2 MSYS` environment.
+  - The pre-compiled packages are not always available (or updated), so sometimes you have to build them yourself from the recipes in the main [MINGW-Packages repository](https://github.com/Alexpux/MINGW-packages).
+  - The following folders then need added to `%PATH%`:
+    - `C:\msys64\mingw\bin`
+    - `C:\msys64\usr\bin`
+  - If you're using `MSYS2`, you likely won't be able to use `Source Code Pro`, so likely switch default font to `Conolas`.
+
+On a new machine, I would generally recommend installing the following packages:
+  - `git` (*if needed*)
+  - `mingw-w64-x86_64-tk` (*for gitk*)
+  - `mingw-w64-x86_64-emacs`
+  - `mingw-w64-x86_64-ag`
+  - `mingw-w64-x86_64-hunspell`
+  - `mingw-w64-x86_64-hunspell-en` (*provides `en_US-large` instead  of `en_US`*)
+
+#### Other Misc (e.g. Environmental Variables)
 
 `emacs.exe` is the main emacs executable, but you would generally use `runemacs.exe` to launch it so it will release any ~console used to launch it.
 
