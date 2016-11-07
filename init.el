@@ -325,13 +325,13 @@ you should place your code here."
   (setq
    ispell-program-name "hunspell"
    ispell-really-hunspell t
-   ispell-dictionary "en_US-large"
-   ispell-dictionary-alist '(("en_US-large"
+   ispell-dictionary "en_US"
+   ispell-dictionary-alist '(("en_US"
                               "[[:alpha:]]"
                               "[^[:alpha:]]"
                               "[']"
                               t
-                              ("-d" "en_US-large")
+                              ("-d" "en_US")
                               nil
                               utf-8))
    ispell-local-dictionary-alist ispell-dictionary-alist

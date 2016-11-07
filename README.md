@@ -42,7 +42,7 @@ On a new machine, I would generally recommend installing the following packages:
   - `mingw-w64-x86_64-emacs`
   - `mingw-w64-x86_64-ag`
   - `mingw-w64-x86_64-hunspell`
-  - `mingw-w64-x86_64-hunspell-en`
+  - `mingw-w64-x86_64-hunspell-en` (*provides `en_US-large` instead  of `en_US`*)
 
 #### Other Misc (e.g. Environmental Variables)
 
