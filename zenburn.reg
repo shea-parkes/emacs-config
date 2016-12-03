@@ -12,9 +12,10 @@ Windows Registry Editor Version 5.00
 "ColorTable01"=dword:00af6464
 "ColorTable09"=dword:00ffafaf
 ; GREEN LGREEN
+"ColorTable02"=dword:00008000
 ; SKP - Darken green since emacs highlights with it
-;"ColorTable02"=dword:00008000
-"ColorTable02"=dword:00265926
+; SKP - Not used since I turned off line highlighting
+;"ColorTable02"=dword:00265926
 "ColorTable10"=dword:007f9f7f
 ; CYAN LCYAN
 ;"ColorTable03"=dword:00808000
