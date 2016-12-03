@@ -356,8 +356,13 @@ you should place your code here."
   (add-hook 'python-mode-hook 'spacemacs/toggle-smartparens-off)
   (add-hook 'python-mode-hook 'electric-pair-mode)
 
-  ;; Simplify the powerline seperators in terminal mode
-  (unless (display-graphic-p) (setq powerline-default-separator 'bar))
+  ;; Simplify the powerline and which-key seperators in terminal mode
+  (unless (display-graphic-p)
+    (setq
+     powerline-default-separator 'bar
+     which-key-separator " : "
+     )
+    )
 
   ;; While using magit, it's most convenient to use Windows credential storage
   ;;   GitHub Desktop doesn't like that setting and will continuously remove it
