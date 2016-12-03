@@ -53,6 +53,12 @@ Emacs looks into `%Home%` instead of `%UserProfile%` for `~/.emacs`, so be sure 
 
 Follow the standard instructions for installing Spacemacs (just clone it into `~/.emacs.d`).  Then clone this repo into `~/.spacemacs.d`.
 
+#### Console/Terminal Mode
+
+It's possible to launch emacs from a terminal and have it stay in the terminal with `emacs -nw`.  On windows, it's not really feasible to get all the fancy UTF-8 characters to work in `cmd.exe` however.  This configuration largely disables them when it detects it is running in terminal mode.
+
+Additionally, `zenburn.reg` is provided to give a more pleasing color palette to the `cmd.exe` windows if you like (I modified it slightly from stock ZenBurn to work better with emacs in the terminal).  Lastly, to use `Source Code Pro` in `cmd.exe` requires some additional light registry editing.
+
 #### Windows Explorer Context Menu Integration
 
 I largely followed the breadcrumbs in these links:
