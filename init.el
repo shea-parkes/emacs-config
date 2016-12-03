@@ -362,6 +362,7 @@ you should place your code here."
      powerline-default-separator 'bar
      which-key-separator " : "
      )
+    (spacemacs/toggle-highlight-current-line-globally-off)
     )
 
   ;; While using magit, it's most convenient to use Windows credential storage
