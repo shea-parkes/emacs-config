@@ -394,7 +394,9 @@ you should place your code here."
     (setq magit-fetch-arguments (quote ("--prune")))
     )
   ;; Also swap it so the password prompt is a popup when it's needed
-  (setenv "GIT_ASKPASS" "git-gui--askpass")
+  (when (display-graphic-p)
+    (setenv "GIT_ASKPASS" "git-gui--askpass")
+    )
 
   ;; Search Python 3 docs
   (defun search-python-docs (search_string)
