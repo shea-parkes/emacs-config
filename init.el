@@ -356,12 +356,14 @@ you should place your code here."
   (add-hook 'python-mode-hook 'spacemacs/toggle-smartparens-off)
   (add-hook 'python-mode-hook 'electric-pair-mode)
 
-  ;; Simplify the powerline and which-key seperators in terminal mode
+  ;; Adjust/simplify for terminal mode (esp in Windows cmd.exe)
   (unless (display-graphic-p)
-    (setq
+    (setq ;; Disable as much unicode as reasonable
      powerline-default-separator 'bar
      which-key-separator " : "
+     spaceline-flycheck-bullet "-%s"
      )
+    ;; Stop highlighting the line due to limited color palette
     (spacemacs/toggle-highlight-current-line-globally-off)
     )
 
