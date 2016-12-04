@@ -59,6 +59,8 @@ It's possible to launch emacs from a terminal and have it stay in the terminal w
 
 Additionally, `zenburn.reg` is provided to give a more pleasing color palette to the `cmd.exe` windows if you like (I modified it slightly from stock ZenBurn to work better with emacs in the terminal).  Lastly, to use `Source Code Pro` in `cmd.exe` requires some additional light registry editing.
 
+Also, you're going to have a much better time using `ssh` to access git remotes from a terminal.  Troubleshoot the connections with `ssh -vT git@github.com`.
+
 #### Windows Explorer Context Menu Integration
 
 I largely followed the breadcrumbs in these links:
