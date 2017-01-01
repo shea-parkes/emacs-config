@@ -407,6 +407,18 @@ you should place your code here."
     (browse-url (concat "https://docs.python.org/3/search.html?q=" search_string)))
   (spacemacs/set-leader-keys-for-major-mode 'python-mode "S" 'search-python-docs)
 
+  ;; Pass the current file to Atom.io (mostly to play with Hydrogen)
+  (defun open-with-atom ()
+    "Open the underlying file of a buffer in atom.io (with project pane)"
+    (interactive)
+    (when buffer-file-name
+      (start-process-shell-command
+       "open-with-atom"
+       nil
+       (format "atom %s %s" (projectile-project-root) buffer-file-name)
+       )))
+  (spacemacs/set-leader-keys "fa" 'open-with-atom)
+
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
