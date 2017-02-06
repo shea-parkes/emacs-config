@@ -23,8 +23,18 @@ I'm currently using [Chocolatey](https://chocolatey.org/) to handle installing e
   - `git -params '"/GitAndUnixToolsOnPath"'` (*if not handled elsewhere*)
 
 Other useful packages:
+  - `clink`
+  - `rapidee`
   - `putty.portable`
-  -  `rapidee`
+
+To have `clink` auto-complete git branch names, you need to ~install an accompanying library.  The installation instructions are rather non-existent, so here's something that works:
+```bat
+rem Target directory isn't empty, so have to play some games to clone into it
+cd %LocalAppData%\clink
+git init
+git remote add origin https://github.com/vladimir-kotikov/clink-completions.git
+git pull origin master
+```
 
 #### [MSYS2](http://msys2.github.io/)
 
