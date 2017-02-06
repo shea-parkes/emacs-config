@@ -35,6 +35,7 @@ git init
 git remote add origin https://github.com/vladimir-kotikov/clink-completions.git
 git pull origin master
 ```
+Note: I've had `clink` get accidentally configured with a different profile directory.  You can see its current choice at the bottom of the `clink set` StdOut.  The `clink-completions` repository above needs checked out into the same directory as the `settings` file.
 
 #### [MSYS2](http://msys2.github.io/)
 
