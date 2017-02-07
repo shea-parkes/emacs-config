@@ -75,6 +75,8 @@ Additionally, `zenburn.reg` is provided to give a more pleasing color palette to
 
 Also, you're going to have a much better time using `ssh` to access git remotes from a terminal.  Troubleshoot the connections with `ssh -vT git@github.com`.
 
+*If* you're on windows and you are trying to use `mintty.exe` (e.g. launched via a `git-bash` link of some sort), you're going to need to use `winpty` to get emacs' terminal mode ~almost working.  You just prefix the command like this: `winpty emacs -nw`.
+
 #### Windows Explorer Context Menu Integration
 
 I largely followed the breadcrumbs in these links:
