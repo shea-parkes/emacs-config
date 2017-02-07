@@ -35,6 +35,9 @@ git init
 git remote add origin https://github.com/vladimir-kotikov/clink-completions.git
 git pull origin master
 ```
+
+To have `clink` put the branch name at the prompt, copy the example code from the clink documentation into the same directory.
+
 Note: I've had `clink` get accidentally configured with a different profile directory.  You can see its current choice at the bottom of the `clink set` StdOut.  The `clink-completions` repository above needs checked out into the same directory as the `settings` file.
 
 #### [MSYS2](http://msys2.github.io/)
